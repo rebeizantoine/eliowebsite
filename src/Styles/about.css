@@ -1,0 +1,87 @@
+.image-left img {
+  width: 650px !important;
+  width: 400px;
+}
+.about-homepage {
+  display: flex;
+  margin-left: 70px;
+  margin-top: 70px;
+}
+.about-homepage p {
+  width: 550px;
+  height: 90px;
+  text-align: left;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: 30px;
+  color: #827b7b;
+  margin-top: -10px;
+}
+.about-homepage h2 {
+  margin: 0;
+  font-size: 50px;
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  text-align: left;
+  margin-top: 50px;
+  width: 600px;
+}
+
+.about-homepage button {
+  padding: 12px 30px;
+  color: white;
+  background-color: #a12b35;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  transition: 0.3s ease;
+  margin-left: -430px;
+}
+
+.about-homepage button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.homepage-right {
+  margin-left: 70px;
+}
+@media (max-width: 350px) {
+  .about-homepage {
+    margin-left: 17px;
+    margin-top: 40px;
+    width: 100%; /* Adjust width for smaller screens */
+  }
+  .homepage-right {
+    margin-left: 0px;
+  }
+
+  .about-homepage h2 {
+    font-size: 32px; /* Further reduce font size for smaller screens */
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%; /* Full width on smaller screens */
+    letter-spacing: 0.1em;
+  }
+
+  .about-homepage p {
+    margin-bottom: 10px;
+    width: 100%; /* Full width on smaller screens */
+    line-height: 1.6em;
+  }
+
+  .about-homepage button {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 0; /* Center button on smaller screens */
+    width: 100%; /* Full width on smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}

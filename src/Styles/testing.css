@@ -1,0 +1,98 @@
+/* Testing.css */
+
+.mobile-container {
+    max-width: 480px;
+    margin: auto;
+    background-color: #fff;
+    height: auto;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+    padding: 10px;
+  }
+  
+  .topnav .active {
+    background-color: #04AA6D;
+    color: white;
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 5px;
+  }
+  
+  .topnav .link {
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    background-color: white;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .topnav .icon {
+    background: black;
+    color: white;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 14px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Initially hide the links and the Font Awesome icon */
+ 
+  
+  .fa {
+    display: none;
+  }
+  
+  @media screen and (max-width: 600px) {
+    /* Show the links and the Font Awesome icon when the screen size is less than 600px */
+    #myLinks.show {
+      display: block;
+      z-index: 9000;
+    }
+    #mylinks{
+        display: block;
+        z-index: 9999;
+    }
+    .link{
+        z-index: 9999;
+    }
+  
+
+  
+    /* Adjust the position of the Font Awesome icon */
+    .topnav .icon {
+      background: black;
+      color: white;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 180px; /* Adjust the position */
+      padding: 14px 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #myLinks a{
+        z-index: 9999;
+    }
+    .mobile-container.menu-open {
+        z-index: 0;
+      }
+  }
+  

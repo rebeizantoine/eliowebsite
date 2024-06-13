@@ -1,0 +1,102 @@
+.item-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; /* Adjust the gap between items as needed */
+    margin: 20px 10px; /* Adjust the margin as needed */
+    margin-left: 70px;
+}
+
+.image-priceand {
+    width: 250px;
+    height: 260px; /* Specify the height in px */
+    margin-left: -90px;
+    transition: 0.3s ease ;
+}
+.image-priceand:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.priceand {
+    max-width: 250px;
+    height: 40px;
+    text-align: left;
+}
+
+.priceand h1 {
+    font-size: 16px;
+    margin-bottom: -5px;
+    line-height: 17px;
+    color: #000;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    width: fit-content;
+}
+
+.priceand p {
+    font-size: 12px;
+    color: #656565;
+    margin-top: 10px;
+    letter-spacing: 0.1rem;
+    line-height: 30px;
+    text-align: left;
+}
+
+.priceand-h2 {
+    margin: 0;
+    font-size: 30px;
+    color: #000;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-align: left;
+    margin-top: 50px;
+}
+.priceand-viewall button{
+    padding: 12px 30px;
+    color: white;
+    background-color: #a12b35;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    transition: 0.3s ease;
+}
+
+.priceand-viewall button:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+@media (max-width: 350px) {
+    .item-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 10px; /* Adjust margin for smaller screens */
+    }
+
+    .image-priceand {
+        width: 100%; /* Make images responsive */
+        height: auto;
+        margin-left: 0; /* Reset margin for smaller screens */
+    }
+
+    .priceand {
+        max-width: 100%;
+        height: auto;
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .priceand h1, .priceand p {
+        width: 100%;
+        text-align: center; /* Center text for smaller screens */
+    }   
+
+    .priceand-h2 {
+        text-align: center; /* Center heading for smaller screens */
+    }
+}
