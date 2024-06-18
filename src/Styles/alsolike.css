@@ -1,50 +1,19 @@
-.item-grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px; /* Adjust the gap between items as needed */
-  margin: 20px 10px; /* Adjust the margin as needed */
-  margin-left: 70px;
+.also-like-all {
+  margin-left: 60px;
 }
 
-.image-priceand {
-  width: 250px;
-  height: 260px; /* Specify the height in px */
-  margin-left: -90px;
-  transition: 0.3s ease;
-}
-.image-priceand:hover {
-  transform: scale(1.1);
-  cursor: pointer;
+.alsolike-flex {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  margin-left: 30px;
 }
 
-.priceand {
-  max-width: 250px;
-  height: 40px;
-  text-align: left;
+.alsolike-flex img {
+  width: 330px;
+  height: 400px;
 }
-
-.priceand h1 {
-  font-size: 16px;
-  margin-bottom: -5px;
-  line-height: 17px;
-  color: #000;
-  font-family: Montserrat, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 2px;
-  width: fit-content;
-}
-
-.priceand p {
-  font-size: 12px;
-  color: #656565;
-  margin-top: 10px;
-  letter-spacing: 0.1rem;
-  line-height: 30px;
-  text-align: left;
-}
-
-.priceand-h2 {
+.alsolike h2 {
   margin: 0;
   font-size: 30px;
   color: #000;
@@ -56,7 +25,65 @@
   text-align: left;
   margin-top: 50px;
 }
-.priceand-viewall button {
+.item-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px; /* Adjust the gap between items as needed */
+  margin: 20px 10px; /* Adjust the margin as needed */
+  margin-left: 70px;
+}
+
+.image-alsolike2 {
+  width: 330px;
+  height: 400px; /* Specify the height in px */
+  margin-left: -90px;
+}
+
+.alsolike {
+  max-width: 250px;
+  height: 40px;
+  text-align: left;
+  position: relative;
+  left: -35px;
+}
+
+.alsolike h1 {
+  font-size: 16px;
+  margin-bottom: -5px;
+  line-height: 17px;
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 2px;
+  width: fit-content;
+}
+
+.alsolike p {
+  font-size: 12px;
+  color: #656565;
+  margin-top: 10px;
+  letter-spacing: 0.1rem;
+  line-height: 30px;
+  text-align: left;
+}
+
+.alsolike-h2 {
+  margin: 0;
+  font-size: 30px;
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  text-align: left;
+  margin-top: 50px;
+  position: relative;
+  left: 0px;
+}
+
+.alsolike-viewall button {
   padding: 12px 30px;
   color: white;
   background-color: #a12b35;
@@ -68,9 +95,12 @@
   transition: 0.3s ease;
 }
 
-.priceand-viewall button:hover {
+.alsolike-viewall button:hover {
   cursor: pointer;
   transform: scale(1.2);
+}
+.item-grid-1 :hover {
+  cursor: pointer;
 }
 
 @media (max-width: 350px) {
@@ -79,25 +109,28 @@
     margin-left: 10px; /* Adjust margin for smaller screens */
   }
 
-  .image-priceand {
+  .image-alsolike2 {
     width: 100%; /* Make images responsive */
     height: auto;
     margin-left: 0; /* Reset margin for smaller screens */
   }
+  .image-alsolike2:hover {
+    cursor: pointer !important;
+  }
 
-  .priceand {
+  .alsolike {
     max-width: 100%;
     height: auto;
     text-align: center; /* Center text for smaller screens */
   }
 
-  .priceand h1,
-  .priceand p {
+  .alsolike h1,
+  .alsolike p {
     width: 100%;
     text-align: center; /* Center text for smaller screens */
   }
 
-  .priceand-h2 {
+  .alsolike-h2 {
     text-align: center; /* Center heading for smaller screens */
   }
 }

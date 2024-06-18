@@ -1,0 +1,326 @@
+.image-left-1 img {
+  width: 800px;
+  height: 800px;
+}
+.single-container-123 {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  display: flex;
+  position: relative;
+  left: 0px;
+}
+.right-everything .first h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 16px;
+  font-style: italic;
+  letter-spacing: 0.13 rem;
+  font-family: "DM Sans", sans-serif;
+  color: rgba(18, 18, 18, 1);
+  position: relative;
+  left: -30px;
+}
+.right-everything .first h1 {
+  margin-top: 5px;
+  line-height: 40px;
+  margin-bottom: -10px;
+  font-size: 38px;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgba(18, 18, 18, 1);
+  width: 390px;
+  height: 80px;
+  text-align: left;
+  position: relative;
+  left: 40px;
+}
+.second {
+  margin-left: 40px;
+}
+.second h3 {
+  font-size: 22px;
+  color: #a12b35;
+  letter-spacing: 0.13rem;
+  width: 135px;
+  height: 33px;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: -5px;
+}
+.second p {
+  font-style: initial;
+  color: #927f6e;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 19px;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  width: 350px;
+  height: 32px;
+  text-align: left;
+  margin-bottom: -5px;
+}
+.flex-third {
+  display: flex;
+}
+.flex-third :nth-child(1) {
+  margin-right: 20px;
+}
+.third {
+  margin-left: 40px;
+}
+.flex-third p {
+  font-size: 14px;
+  text-transform: none;
+  letter-spacing: 0.06rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: rgba(18, 18, 18, 0.8);
+}
+.flex-third-2 {
+  display: flex;
+  gap: 30px;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid black;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+.metallic {
+  background-color: gray; /* Example color, change as needed */
+}
+
+.matte {
+  background-color: black; /* Example color, change as needed */
+}
+
+.circle.selected {
+  border-color: red;
+}
+.fourth {
+  margin-left: 45px;
+  margin-top: 20px;
+  position: relative;
+  left: -140px;
+}
+
+.fourth span {
+  color: #408a7e;
+  font-size: 17px;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  margin-left: 10px;
+  letter-spacing: 0.1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0;
+  margin: 0px 0px 30px;
+  padding: 9px 30px 11px;
+}
+
+.fourth a {
+  color: #408a7e; /* Green text color */
+  background-color: #fff; /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  border: 0.1rem solid #408a7e; /* Green border */
+  border-radius: 0px; /* Optional: Rounded corners */
+  padding: 9px 30px 11px; /* Padding to match the span */
+  text-decoration: none; /* Remove underline */
+  display: inline-block;
+  width: 290px;
+  height: 20px;
+  transition: 0.3s ease smooth;
+}
+
+.fourth a:hover {
+  background-color: #f0f0f0; /* Optional: Change background on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Optional: Change shadow on hover */
+  border: 0.2rem solid #408a7e;
+}
+.fourth-image {
+  width: 20px !important;
+  height: 20px !important;
+  color: green;
+  position: relative;
+  top: 4px;
+  left: -10px;
+}
+.customise-fourth {
+  color: #a12b35 !important;
+  border: 0.1rem solid #a12b35 !important;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.customise-fourth:hover {
+  background-color: #f0f0f0; /* Optional: Change background on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Optional: Change shadow on hover */
+  border: 0.2rem solid #a12b35 !important;
+}
+.buyit-fourth {
+  background-color: #a12b35 !important;
+  color: #fff !important;
+  border: 0.1rem solid #a12b35 !important;
+}
+.buyit-fourth:hover {
+  background-color: #f0f0f0; /* Optional: Change background on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Optional: Change shadow on hover */
+  border: 0.2rem solid #a12b35 !important;
+}
+.quantity {
+  font-size: 13px;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #121212bf;
+  position: relative;
+  right: 230px;
+}
+.fifth span img {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 10px;
+}
+.fifth span {
+  display: flex;
+}
+.fifth p {
+  font-style: initial;
+  color: #927f6e;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 19px;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.second-p-here {
+  margin-top: 5px;
+  position: relative;
+  left: -230px;
+}
+.fifth {
+  position: relative;
+  left: 0px;
+  top: 20px;
+}
+.sixth {
+  width: auto;
+  position: relative;
+  left: -120px;
+  margin-top: 40px;
+}
+.seventh p {
+  font-size: 16px;
+  line-height: 19px;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #121212bf;
+
+  width: 350px;
+  height: 300px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: left;
+  line-height: 1.6rem;
+  margin-left: 40px;
+}
+.seventh p::selection {
+  background-color: rgba(18, 18, 18, 0.2);
+}
+.extra-images {
+  margin-right: -100px;
+}
+.extra-images img {
+  width: 350px;
+  height: 350px;
+  margin-right: 90px;
+}
+.extra-images :nth-child(1) {
+  position: relative;
+  left: -10px;
+}
+
+.accordion {
+  width: 350px;
+  margin: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.accordion-item {
+  border-top: 1px solid #ddd;
+}
+
+.accordion-title {
+  background: #f7f7f7;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-title h3 {
+  margin: 0;
+}
+
+.accordion-content {
+  background: #fff;
+  padding: 10px;
+}
+
+.accordion-content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 19px;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #121212bf;
+
+  text-align: left;
+  line-height: 1.6rem;
+}
+
+.accordion-title span {
+  font-size: 20px;
+}
+.flex-option {
+  display: flex;
+}
+.flex-option h3 {
+  min-height: 1.6rem;
+  max-width: 400px;
+  font-size: 16px;
+  word-break: break-word;
+  font-family: Monserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #a12b35;
+  margin-left: 0px;
+  width: auto;
+}
+.flex-option h3:nth-child(1) {
+  margin-left: -20px;
+  color: blue;
+}
+.flex-option img {
+  width: 20px;
+  height: 20px;
+}

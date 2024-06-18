@@ -5,7 +5,10 @@
   gap: 0.5em;
   position: relative;
   left: 500px;
-  top: -50px;
+  top: -350px;
+  width: auto;
+  flex-wrap: nowrap;
+  width: 300px;
 }
 
 .social-icons-group {
@@ -112,6 +115,7 @@
     top: auto;
     gap: 0.2em;
     margin-top: 30px;
+    margin-left: -30px;
   }
 
   .social-icons-group {

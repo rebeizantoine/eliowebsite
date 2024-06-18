@@ -1,0 +1,109 @@
+.topwhychooseflex {
+  display: flex;
+  margin-left: 50px;
+  overflow: hidden; /* Hide overflow content */
+  margin-bottom: 50px;
+}
+.topwhychoose {
+  margin-top: 50px;
+}
+.topwhychoose h1 {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  position: relative;
+  left: -520px;
+  margin-bottom: 30px;
+}
+
+.grid-item-whychoose {
+  background: #f3f3f3;
+  width: 400px;
+  height: 240px;
+  padding: 20px 20px;
+  margin-right: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.grid-item-whychoose.active {
+  transform: translateX(0);
+}
+
+.grid-item-whychoose h3 {
+  font-size: 24px;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: #121212bf;
+  margin-top: -10px;
+  position: relative;
+  left: -60px;
+}
+
+.grid-item-whychoose p {
+  text-align: left;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  line-height: 30px;
+  color: #827b7b;
+  margin-top: -10px;
+  font-size: 0.9rem;
+}
+.slider-controls {
+  display: none;
+}
+
+@media (max-width: 350px) {
+  .slider-container {
+    overflow: hidden;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+  }
+  .topwhychooseflex {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .grid-item-whychoose {
+    width: 100%;
+    margin-right: 0;
+    display: none; /* Hide all slides */
+  }
+
+  .grid-item-whychoose.active {
+    display: block; /* Show only the active slide */
+  }
+
+  .slider-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    display: inline-flex;
+    gap: 80px;
+    margin-left: 50px;
+  }
+
+  .slider-controls button {
+    padding: 10px 20px;
+    background-color: #a12b35;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .grid-item-whychoose h3 {
+    font-size: 19px;
+    margin-left: 36px;
+    position: relative;
+    left: -40px;
+  }
+  .slider-container {
+    position: relative;
+    left: -30px;
+    top: -100px;
+  }
+}

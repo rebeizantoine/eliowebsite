@@ -1,15 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Logo from "../Images/LOGO.png";
 import smartphone from "../Images/smartphone.png";
 import Location from "../Images/location.png";
 import searchIcon from "../Images/search.png";
 import "../Styles/header.css";
-import Testing from './Testing'; // Import the Testing component
+import Testing from "./Testing"; // Import the Testing component
 
 const Header = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [showMenu, setShowMenu] = useState(false); // State to control the visibility of the Testing component
   const searchRef = useRef(null);
+  const navigate = useNavigate();
 
   const toggleSearch = () => {
     setShowSearch(!showSearch);
@@ -31,15 +33,23 @@ const Header = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
 
   return (
     <div>
       {/* Pass toggleMenu function as a prop to Testing component */}
       {showMenu && <Testing toggleMenu={toggleMenu} />}
-      
+
       <div className="header-top">
         <div className="logo-container">
-          <img src={Logo} className="header-logo" alt="Logo" />
+          <img
+            src={Logo}
+            className="header-logo"
+            alt="Logo"
+            onClick={() => handleNavigation("/")}
+          />
         </div>
         <div className="big-box-left">
           <div className="phone-box">
@@ -62,7 +72,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="nav-container">
         <div className="search-container" ref={searchRef}>
           <img
@@ -80,20 +90,36 @@ const Header = () => {
             />
           )}
         </div>
-       
-            <i className="fa fa-bars" onClick={toggleMenu} id="real-one"></i>
-          
+
+        <i className="fa fa-bars" onClick={toggleMenu} id="real-one"></i>
+
         <nav className="nav-menu">
-          <span className="nav-item">Home</span>
-          <span className="nav-item">Steelwork</span>
+          <span className="nav-item" onClick={() => handleNavigation("/")}>
+            Home
+          </span>
+          <span
+            className="nav-item"
+            onClick={() => handleNavigation("/steelwork")}
+          >
+            Steelwork
+          </span>
           <span className="nav-item">Projects</span>
-          <span className="nav-item">Metal Wall Art</span>
-          <span className="nav-item">What We Do</span>
+          <span
+            className="nav-item"
+            onClick={() => handleNavigation("/collection")}
+          >
+            Metal Wall Art
+          </span>
+          <span
+            className="nav-item"
+            onClick={() => handleNavigation("/whatwedo")}
+          >
+            What We Do
+          </span>
           <span className="nav-item">Contact Us</span>
-          
         </nav>
       </div>
-     
+
       <div className="info-bar">
         <span>Fast delivery</span>
         <span>Cash on delivery</span>

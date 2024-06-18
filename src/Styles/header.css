@@ -4,6 +4,9 @@
   width: 165px;
   height: 40px;
 }
+.header-logo:hover {
+  cursor: pointer;
+}
 
 .header-phone,
 .header-location {
@@ -168,30 +171,31 @@
     transform: translateX(-1000%);
     opacity: 0.5;
   }
-20%,50%{
-  transform: translateX(0%);
-  opacity: 1;
-} 
-50%,100%{
-  transform: translateX(-1000%);
-  opacity: 0;
-}
-
-
-
-}
-@keyframes slide2 {
-  0%, 40% {
-    transform: translateX(-1000%);
-    opacity: 0;
-  }
-  50%, 90% {
+  20%,
+  50% {
     transform: translateX(0%);
     opacity: 1;
   }
-  100%{
+  50%,
+  100% {
     transform: translateX(-1000%);
-    opacity:0;
+    opacity: 0;
+  }
+}
+@keyframes slide2 {
+  0%,
+  40% {
+    transform: translateX(-1000%);
+    opacity: 0;
+  }
+  50%,
+  90% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-1000%);
+    opacity: 0;
   }
 }
 
@@ -227,8 +231,7 @@
   }
 } */
 
-
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
   .icon-box {
     background: #a12b35;
     border-radius: 5px;
@@ -248,7 +251,7 @@
     height: 40px;
     margin-left: 0%;
   }
-  
+
   .big-box-left {
     display: flex;
     align-items: center;
@@ -271,7 +274,7 @@
     gap: 50px;
     font-family: "DM Sans", sans-serif;
   }
-  
+
   .nav-item {
     font-size: 16px;
     cursor: pointer;
@@ -285,7 +288,7 @@
     background-color: #f8f8f8;
     position: relative;
   }
-  .search-container{
+  .search-container {
     display: none;
   }
 
@@ -300,7 +303,7 @@
     white-space: nowrap;
     position: relative;
   }
-  
+
   .info-bar span {
     display: inline-block; /* Ensure spans are displayed inline */
     opacity: 0;
@@ -309,34 +312,31 @@
     top: 20%;
     transform: translate(0%, -50%);
   }
-  .showbm{
+  .showbm {
     display: block;
     height: auto;
   }
 
-  .mobile-container{
+  .mobile-container {
     display: block;
     position: absolute;
     z-index: 9999;
-    
   }
-.top-nav{
-  z-index: 9999;
-}
-.nav-menu{
-  display: none;
-}
+  .top-nav {
+    z-index: 9999;
+  }
+  .nav-menu {
+    display: none;
+  }
 
-#real-one{
-  position: absolute;
-  top: 20%;
-}
-.fa{
-  display: block!important;
-  position: absolute;
-  top: -650%!important;
-  left: 10%;
-
-}
-  
+  #real-one {
+    position: absolute;
+    top: 20%;
+  }
+  .fa {
+    display: block !important;
+    position: absolute;
+    top: -650% !important;
+    left: 10%;
+  }
 }
