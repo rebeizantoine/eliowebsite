@@ -18,6 +18,7 @@ import Collections from "./Components/Collections";
 import AboutUs from "./Components/Whatwedo";
 import CollectionSingle from "./Components/CollectionSingle";
 import Testingtally from "./Components/testingtally";
+import Dashboard from "./Dashboard/Dashboard";
 
 function App() {
   return (
@@ -135,6 +136,7 @@ function App() {
               </>
             }
           ></Route>
+          <Route path="/dashboard" element={<Dashboard />}></Route>
         </Routes>
       </Router>
     </div>

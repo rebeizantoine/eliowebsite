@@ -1,0 +1,82 @@
+.dashboard-home {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-home h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.artist-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.artist-featured123 {
+  flex: 1;
+  padding: 10px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.artist-featured123 h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: initial;
+}
+
+.form-group select {
+  max-width: 250px; /* Adjust the max-width of the dropdown boxes */
+}
+
+.resizable-textbox {
+  max-width: 300px; /* Adjust the max-width of the input box */
+  min-height: 100px;
+  resize: both; /* Enable both horizontal and vertical resizing */
+}
+
+.save-btn,
+.edit-btn {
+  background-color: #846f63;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.save-btn:hover,
+.edit-btn:hover {
+  background-color: #846f63;
+}
+.remove-from-front {
+  color: #b89d4f; /* Change to your preferred color */
+  text-decoration: underline;
+  cursor: pointer;
+  width: 180px;
+}
+
+.remove-from-front:hover {
+  color: #0056b3; /* Change to your preferred color on hover */
+}

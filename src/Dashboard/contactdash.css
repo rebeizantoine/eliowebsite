@@ -1,0 +1,49 @@
+.contact-fieldset {
+  margin-top: 40px;
+}
+
+.contacts-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  border: 2px solid #846f63; /* Add border styling */
+}
+
+.contacts-table th,
+.contacts-table td {
+  border: 2px solid #846f63; /* Add border styling */
+  padding: 10px;
+  text-align: left;
+}
+
+.contacts-table th {
+  background-color: #f5ebe0;
+}
+
+.contacts-table td {
+  /* background-color: #846f63; */
+  color: #846f63;
+}
+
+.contact-edit-form {
+  margin-top: 20px;
+}
+
+.contact-edit-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.contact-edit-form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 2px solid #846f63;
+  border-radius: 5px;
+}
+
+.contact-save-btn,
+.contact-cancel-btn {
+  margin-top: 10px;
+}

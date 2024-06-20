@@ -1,0 +1,101 @@
+.dashboard-home {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-home h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.painting-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* To ensure items are evenly spaced */
+}
+
+.edit-featured-painting {
+  flex: 1 1 calc(33.333% - 20px); /* Adjusting flex basis to account for margin */
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* Ensuring background is white */
+  border-radius: 8px; /* Adding border-radius for rounded corners */
+}
+
+.painting-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.edit-featured-painting h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group select,
+.form-group textarea,
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensuring padding doesn't affect total width */
+}
+
+.form-group select {
+  max-width: 100%; /* Ensuring dropdowns take full width */
+}
+
+.resizable-textbox {
+  max-width: 100%; /* Ensuring resizable textbox takes full width */
+  min-height: 100px;
+  resize: both; /* Enable both horizontal and vertical resizing */
+}
+
+.save-btn,
+.edit-btn {
+  background-color: #846f63;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease; /* Adding transition for hover effect */
+}
+
+.save-btn:hover,
+.edit-btn:hover {
+  background-color: #6f5a51; /* Slightly darker shade on hover */
+}
+
+@media (max-width: 768px) {
+  .edit-featured-painting {
+    flex: 1 1 calc(50% - 20px); /* Adjusting flex basis for tablets and small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .edit-featured-painting {
+    flex: 1 1 100%; /* Adjusting flex basis for mobile screens */
+    margin: 10px 0; /* Reducing margin for mobile */
+  }
+
+  .save-btn,
+  .edit-btn {
+    margin: 10px 0; /* Adding margin for better spacing on mobile */
+  }
+}

@@ -1,7 +1,14 @@
 import React from "react";
 
 const Mayalsolike = () => {
-  return <div>Mayalsolike</div>;
+  return <div>
+ 
+ <div className="container-may-like">
+
+
+
+ </div>
+  </div>;
 };
 
 export default Mayalsolike;

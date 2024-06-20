@@ -1,0 +1,68 @@
+.about-section {
+  padding: 20px;
+}
+
+.about-item {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.about-text-img {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.about-text-img img,
+.about-img img {
+  display: block;
+  margin-top: 10px;
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.about-actions {
+  margin-top: 10px;
+}
+
+.about-actions button {
+  margin-right: 10px;
+}
+
+.about-item label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.about-item textarea,
+.about-item input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.about-item textarea {
+  height: 150px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.about12345 {
+  margin-right: 20px;
+}
