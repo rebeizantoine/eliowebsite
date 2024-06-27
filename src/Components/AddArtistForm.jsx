@@ -214,7 +214,7 @@ const AddArtistForm = ({ onCancel, onSuccess }) => {
         />
       </div>
       <div className="form-group">
-        <label>Main Tag</label>
+        <label>Main Tag(COLLECTION NAME)</label>
         <input
           type="text"
           name="item_mainTag"

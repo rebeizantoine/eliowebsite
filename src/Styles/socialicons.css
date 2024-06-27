@@ -4,7 +4,7 @@
   align-items: center;
   gap: 0.5em;
   position: relative;
-  left: 500px;
+  left: 300px;
   top: -350px;
   width: auto;
   flex-wrap: nowrap;
@@ -30,7 +30,9 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
-
+.social-icon-card {
+  cursor: pointer;
+}
 .social-icon {
   width: 60%;
   height: 60%;
@@ -109,7 +111,7 @@
 .social-icon-card4:hover .gmail {
   fill: white;
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 400px) {
   .social-icons-container {
     left: auto;
     top: auto;
@@ -130,5 +132,19 @@
   .social-icon {
     width: 50%;
     height: 50%;
+  }
+}
+@media (min-width: 1450px) and (max-width: 1900px) {
+  .social-icons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    position: relative;
+    left: 500px;
+    top: -350px;
+    width: auto;
+    flex-wrap: nowrap;
+    width: 300px;
   }
 }

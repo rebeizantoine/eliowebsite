@@ -5,6 +5,17 @@
   margin: 20px 10px; /* Adjust the margin as needed */
   margin-left: 70px;
 }
+.smallinstig {
+  font-size: 14px;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: 30px;
+}
+.bigofbigod {
+  margin-bottom: 30px !important;
+}
 
 .image-priceand1 {
   width: 250px;
@@ -55,7 +66,7 @@
   margin-bottom: 10px;
   text-align: left;
   margin-top: 50px;
-  margin-left: 45%;
+  margin-left: 35%;
 }
 
 .priceand1-viewall button {
@@ -81,12 +92,14 @@
 }
 
 .pagination button {
-  margin: 0 5px;
+  margin: 0 10px;
+  margin-top: 20px;
   padding: 10px 15px;
   border: none;
   background-color: #333;
   color: #fff;
   cursor: pointer;
+  width: 80px;
 }
 
 .pagination button:disabled {
@@ -106,7 +119,7 @@
   width: 200px;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
   .item-grid-container1 {
     grid-template-columns: repeat(2, 1fr);
     margin-left: 10px; /* Adjust margin for smaller screens */
@@ -136,5 +149,116 @@
   }
   .priceand-p21 {
     margin-right: 30px;
+    left: 0%;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+  .item-grid-container1 {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 10px;
+  }
+
+  .image-priceand1 {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .priceand1 {
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  .priceand1 h1,
+  .priceand1 p {
+    width: 100%;
+    text-align: center;
+  }
+
+  .priceand-h21 {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .priceand-p21 {
+    text-align: center;
+    left: 0;
+    margin-right: 0;
+  }
+}
+@media (min-width: 1450px) and (max-width: 1900px) {
+  .item-grid-container1 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 20px 50px;
+  }
+
+  .image-priceand1 {
+    width: 300px;
+    height: 310px;
+    margin-left: 0;
+  }
+
+  .priceand1 {
+    max-width: 300px;
+    height: auto;
+    margin-left: 80px;
+  }
+
+  .priceand1 h1 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .priceand1 p {
+    font-size: 14px;
+    line-height: 35px;
+  }
+
+  .priceand-h21 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    margin-left: 38%;
+  }
+  .smallinstig .priceand-p21 {
+    font-size: 16px;
+    position: relative;
+    left: 83.5%;
+    width: 220px;
+  }
+
+  .pagination button {
+    width: 90px;
+  }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  .item-grid-container1 {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* Adjust columns for medium screens */
+    gap: 15px; /* Adjust gap between items */
+    margin: 20px 30px; /* Adjust margin as needed */
+    margin-left: 10px; /* Ensure left margin is appropriate */
+  }
+
+  .priceand-h21 {
+    margin-left: 0%; /* Center heading */
+  }
+
+  .priceand-p21 {
+    left: 0%; /* Position product count accordingly */
+  }
+
+  .priceand1 {
+    margin-left: 0; /* Reset left margin for item details */
+  }
+
+  .image-priceand1 {
+    width: 100%; /* Make images responsive */
+    height: auto;
+    margin-left: 0; /* Reset left margin */
   }
 }

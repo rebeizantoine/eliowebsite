@@ -12,20 +12,20 @@ const About = () => {
   };
 
   return (
-    <div>
-      <div className="about-homepage">
-        <div className="image-left">
-          <img src={welding} alt="" />
-        </div>
-        <div className="homepage-right">
-          <h2>Customize your own project</h2>
-          <p>
-            Outbox is set up to take in your most complex steelwork projects.
-            Whether you'd like to execute a simple dining room table or you're
-            opening an industrial bar pub downtown, we're all in!
-          </p>
-          <button onClick={openTallyPopup}>Explore Ideas</button>
-        </div>
+    <div className="about-container">
+      <div className="about-image">
+        <img src={welding} alt="Welding" />
+      </div>
+      <div className="about-content">
+        <h2 className="about-title">Customize your own project</h2>
+        <p className="about-description">
+          Outbox is set up to take in your most complex steelwork projects.
+          Whether you'd like to execute a simple dining room table or you're
+          opening an industrial bar pub downtown, we're all in!
+        </p>
+        <button className="about-button" onClick={openTallyPopup}>
+          Explore Ideas
+        </button>
       </div>
       {showPopup && <TallyPopupComponent formId={formId} />}
     </div>

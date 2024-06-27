@@ -8,11 +8,12 @@ import DashboardSkills from "./DashboardSkills";
 import DashboardProjects from "./DashboardProjects";
 import DashboardHome from "../Components/DashboardHome";
 import "./dashboard.css";
-import DashboardHome2 from "./DashboardHome2";
+import Featureditems from "./Featureditems";
 import ArtistDashboard from "./ArtistDashboard";
 import DashboardGalleries from "./DashboardGallery";
 import Categories123 from "./Categories123";
 import Collections123 from "./collections123";
+import PurchasedDashboard from "./PurchaseDashboard";
 
 function Dashboard() {
   return (
@@ -20,20 +21,17 @@ function Dashboard() {
       <DashboardHeader />
       <DashboardSidebar />
       <div className="main" style={{ marginLeft: "220px", padding: "20px" }}>
-        <section id="homepage">
-          <DashboardHome />
-        </section>
-        <section id="featuredpaintings">
-          <DashboardHome2 />
+        <section id="featureditems">
+          <Featureditems />
         </section>
 
         <section id="artists">
           <ArtistDashboard />
         </section>
 
-        <section id="exhibitions">
+        {/* <section id="exhibitions">
           <DashboardExperience />
-        </section>
+        </section> */}
         <section id="contactus">
           <DashboardSkills />
         </section>
@@ -44,11 +42,14 @@ function Dashboard() {
           <Collections123 />
         </section>
 
-        <section id="aboutus">
+        {/* <section id="aboutus">
           <DashboardAbout />
-        </section>
-        <section id="gallery">
+        </section> */}
+        {/* <section id="gallery">
           <DashboardGalleries />
+        </section> */}
+        <section id="Orders">
+          <PurchasedDashboard />
         </section>
       </div>
     </div>

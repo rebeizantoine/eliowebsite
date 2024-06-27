@@ -4,31 +4,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Draggable from "react-draggable";
 import "./dashboardcv.css";
-import AddArtistForm from "../Components/AddArtistForm"; // Import your AddArtistForm component
+import AddArtistForm from "../Components/AddArtistForm";
 
 const ArtistDashboard = () => {
   const [items, setItems] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
   const [currentItem, setCurrentItem] = useState({});
   const [isAdding, setIsAdding] = useState(false);
-  const [newItem, setNewItem] = useState({
-    item_name: "",
-    item_price: 0,
-    item_color1: "",
-    item_color2: "",
-    item_quantityAvailable: 0,
-    item_dimensions: "",
-    item_customizable: false,
-    item_image1: "",
-    item_image2: "",
-    item_image3: "",
-    item_description: "",
-    item_featuredOnFront: false,
-    item_mainTag: "",
-    item_additionalTag1: "",
-    item_additionalTag2: "",
-    item_additionalTag3: "",
-  });
 
   useEffect(() => {
     fetchItems();
@@ -95,6 +77,30 @@ const ArtistDashboard = () => {
     setCurrentItem({});
   };
 
+  const handleMayLikeChange = (itemId, value) => {
+    const checkedItemsCount = items.filter((item) => item.item_maylike).length;
+    if (checkedItemsCount >= 4 && value) {
+      toast.error("Only 4 items can be marked as 'May Like' at a time");
+      return;
+    }
+
+    axios
+      .put(`http://localhost:8000/singleitem/${itemId}`, {
+        item_maylike: value,
+      })
+      .then(() => {
+        setItems((prevItems) =>
+          prevItems.map((item) =>
+            item._id === itemId ? { ...item, item_maylike: value } : item
+          )
+        );
+        toast.success("Item updated successfully");
+      })
+      .catch((error) => {
+        console.error("There was an error updating the item!", error);
+      });
+  };
+
   const openImageInNewTab = (url) => {
     window.open(url, "_blank");
   };
@@ -105,7 +111,6 @@ const ArtistDashboard = () => {
 
   const handleAddCancel = () => {
     setIsAdding(false);
-    setNewItem({});
   };
 
   const handleImageUpload = (e, imageName) => {
@@ -120,21 +125,15 @@ const ArtistDashboard = () => {
     reader.readAsDataURL(file);
   };
 
-  const handleNewImageUpload = (e, imageName) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setNewItem((prevItem) => ({
-        ...prevItem,
-        [imageName]: reader.result,
-      }));
-    };
-    reader.readAsDataURL(file);
-  };
-
   return (
     <div className="dashboard-cv">
       <ToastContainer />
+      <div className="note-box">
+        <p>
+          Note: Only 8 can be featured on front, and 4 HAVE TO BE IN THE MAYLIKE
+          SECTION
+        </p>
+      </div>
       <fieldset className="cv-fieldset">
         <div className="cv" id="cv">
           <h1>Items</h1>
@@ -160,6 +159,7 @@ const ArtistDashboard = () => {
                 <th>Additional Tag 1</th>
                 <th>Additional Tag 2</th>
                 <th>Additional Tag 3</th>
+                <th>May Like</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -172,17 +172,15 @@ const ArtistDashboard = () => {
                   <td>{item.item_color2}</td>
                   <td>{item.item_quantityAvailable}</td>
                   <td>
-                    <Draggable>
-                      <div>
-                        <textarea
-                          name=""
-                          id=""
-                          className="textarea"
-                          readOnly
-                          value={item.item_dimensions}
-                        />
-                      </div>
-                    </Draggable>
+                    <div>
+                      <textarea
+                        name=""
+                        id=""
+                        className="textarea"
+                        readOnly
+                        value={item.item_dimensions}
+                      />
+                    </div>
                   </td>
                   <td>{item.item_customizable ? "Yes" : "No"}</td>
                   <td>
@@ -226,6 +224,15 @@ const ArtistDashboard = () => {
                   <td>{item.item_additionalTag2}</td>
                   <td>{item.item_additionalTag3}</td>
                   <td>
+                    <input
+                      type="checkbox"
+                      checked={item.item_maylike || false}
+                      onChange={(e) =>
+                        handleMayLikeChange(item._id, e.target.checked)
+                      }
+                    />
+                  </td>
+                  <td>
                     <button
                       className="edit-btn"
                       onClick={() => handleEditClick(item)}
@@ -256,6 +263,7 @@ const ArtistDashboard = () => {
                   onSuccess={() => {
                     setIsAdding(false);
                     toast.success("Item added successfully");
+                    fetchItems(); // Refetch items to update the list
                   }}
                 />
               </div>
@@ -269,7 +277,7 @@ const ArtistDashboard = () => {
                   &times;
                 </span>
                 <h2>Edit Item</h2>
-                <div className="modal-body">
+                <form>
                   <label>
                     Name:
                     <input
@@ -336,14 +344,14 @@ const ArtistDashboard = () => {
                     Image 1:
                     <input
                       type="file"
+                      name="item_image1"
                       onChange={(e) => handleImageUpload(e, "item_image1")}
-                      accept="image/*"
                     />
                     {currentItem.item_image1 && (
                       <img
                         src={currentItem.item_image1}
-                        alt="Preview"
-                        className="item-img-preview"
+                        alt="Image 1"
+                        className="preview-img"
                       />
                     )}
                   </label>
@@ -351,14 +359,14 @@ const ArtistDashboard = () => {
                     Image 2:
                     <input
                       type="file"
+                      name="item_image2"
                       onChange={(e) => handleImageUpload(e, "item_image2")}
-                      accept="image/*"
                     />
                     {currentItem.item_image2 && (
                       <img
                         src={currentItem.item_image2}
-                        alt="Preview"
-                        className="item-img-preview"
+                        alt="Image 2"
+                        className="preview-img"
                       />
                     )}
                   </label>
@@ -366,14 +374,14 @@ const ArtistDashboard = () => {
                     Image 3:
                     <input
                       type="file"
+                      name="item_image3"
                       onChange={(e) => handleImageUpload(e, "item_image3")}
-                      accept="image/*"
                     />
                     {currentItem.item_image3 && (
                       <img
                         src={currentItem.item_image3}
-                        alt="Preview"
-                        className="item-img-preview"
+                        alt="Image 3"
+                        className="preview-img"
                       />
                     )}
                   </label>
@@ -430,13 +438,13 @@ const ArtistDashboard = () => {
                       onChange={handleEditChange}
                     />
                   </label>
-                </div>
-                <button className="save-btn" onClick={handleEditSave}>
-                  Save
-                </button>
-                <button className="cancel-btn" onClick={handleEditCancel}>
-                  Cancel
-                </button>
+                  <button type="button" onClick={handleEditSave}>
+                    Save
+                  </button>
+                  <button type="button" onClick={handleEditCancel}>
+                    Cancel
+                  </button>
+                </form>
               </div>
             </div>
           )}

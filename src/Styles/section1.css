@@ -1,17 +1,23 @@
-.item-grid-container {
+.item-grid-container123 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px; /* Adjust the gap between items as needed */
-  margin: 20px 10px; /* Adjust the margin as needed */
+  gap: 10px;
+  margin: 20px 10px;
   margin-left: 70px;
+}
+
+.item-grid-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the content */
 }
 
 .image-priceand {
   width: 250px;
-  height: 260px; /* Specify the height in px */
-  margin-left: -90px;
+  height: 260px;
   transition: 0.3s ease;
 }
+
 .image-priceand:hover {
   transform: scale(1.1);
   cursor: pointer;
@@ -19,8 +25,7 @@
 
 .priceand {
   max-width: 250px;
-  height: 40px;
-  text-align: left;
+  text-align: center; /* Center align text */
 }
 
 .priceand h1 {
@@ -32,7 +37,6 @@
   font-style: normal;
   font-weight: 400;
   letter-spacing: 2px;
-  width: fit-content;
 }
 
 .priceand p {
@@ -41,7 +45,6 @@
   margin-top: 10px;
   letter-spacing: 0.1rem;
   line-height: 30px;
-  text-align: left;
 }
 
 .priceand-h2 {
@@ -56,6 +59,7 @@
   text-align: left;
   margin-top: 50px;
 }
+
 .priceand-viewall button {
   padding: 12px 30px;
   color: white;
@@ -73,31 +77,108 @@
   transform: scale(1.2);
 }
 
-@media (max-width: 350px) {
-  .item-grid-container {
+/* Responsive Styles */
+@media (max-width: 400px) {
+  .item-grid-container123 {
     grid-template-columns: repeat(2, 1fr);
-    margin-left: 10px; /* Adjust margin for smaller screens */
+    margin-left: 0px !important;
   }
 
   .image-priceand {
-    width: 100%; /* Make images responsive */
+    width: 80%;
     height: auto;
-    margin-left: 0; /* Reset margin for smaller screens */
+    margin-left: 0;
   }
 
   .priceand {
     max-width: 100%;
-    height: auto;
-    text-align: center; /* Center text for smaller screens */
+    text-align: center;
   }
 
   .priceand h1,
   .priceand p {
     width: 100%;
-    text-align: center; /* Center text for smaller screens */
+    text-align: center;
   }
 
   .priceand-h2 {
-    text-align: center; /* Center heading for smaller screens */
+    text-align: center;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+  .item-grid-container123 {
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 0px;
+    gap: -15px;
+    width: 100%;
+  }
+
+  .image-priceand {
+    width: 200px;
+    height: 220px;
+  }
+
+  .priceand {
+    max-width: 200px;
+  }
+
+  .priceand h1 {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+  }
+
+  .priceand p {
+    font-size: 11px;
+    letter-spacing: 0.08rem;
+  }
+
+  .priceand-h2 {
+    font-size: 26px;
+    margin-top: 30px;
+  }
+
+  .priceand-viewall button {
+    width: 200px;
+    padding: 10px 25px;
+    font-size: 14px;
+    margin-left: 0%;
+  }
+}
+
+@media (min-width: 1450px) and (max-width: 1900px) {
+  .item-grid-container123 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .image-priceand {
+    width: 300px;
+    height: 310px;
+  }
+
+  .priceand {
+    max-width: 300px;
+  }
+
+  .priceand h1 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .priceand p {
+    font-size: 14px;
+    line-height: 35px;
+  }
+
+  .priceand-h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+
+  .priceand-viewall button {
+    padding: 15px 35px;
+    font-size: 16px;
   }
 }

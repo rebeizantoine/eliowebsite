@@ -11,14 +11,14 @@ const Whychoose = () => {
         "Choose locally-made furniture for superior quality and craftsmanship. High-quality materials sourced from the local area ensure unparalleled quality that exceeds global manufacturing standards. Imported furniture often involves lower quality materials and questionable durability to cut costs. Choose local, choose quality.",
     },
     {
-      title: "Locally-made furniture123",
+      title: "Crafted with Local Expertise",
       description:
-        "Choose locally-made furniture for superior quality and craftsmanship. High-quality materials sourced from the local area ensure unparalleled quality that exceeds global manufacturing standards. Imported furniture often involves lower quality materials and questionable durability to cut costs. Choose local, choose quality.",
+        "Our locally-made furniture showcases unparalleled craftsmanship and design expertise rooted in our community. Each piece reflects our commitment to quality and innovation, offering a unique blend of style and functionality.",
     },
     {
-      title: "Locally-made furniture",
+      title: "Embrace Local Heritage",
       description:
-        "Choose locally-made furniture for superior quality and craftsmanship. High-quality materials sourced from the local area ensure unparalleled quality that exceeds global manufacturing standards. Imported furniture often involves lower quality materials and questionable durability to cut costs. Choose local, choose quality.",
+        "Opting for our locally-made furniture celebrates our region's rich heritage and artisanal traditions. Each piece not only enhances your home with superior quality but also carries a story of local craftsmanship and cultural pride.",
     },
   ];
 
@@ -43,6 +43,7 @@ const Whychoose = () => {
                 index === currentSlide ? "active" : ""
               }`}
               key={index}
+              style={{ display: index === currentSlide ? "block" : "none" }} // Hide non-active slides
             >
               <h3>{item.title}</h3>
               <p>{item.description}</p>
@@ -50,8 +51,12 @@ const Whychoose = () => {
           ))}
         </div>
         <div className="slider-controls">
-          <button onClick={prevSlide}>Previous</button>
-          <button onClick={nextSlide}>Next</button>
+          <button onClick={prevSlide} aria-label="Previous Slide">
+            Previous
+          </button>
+          <button onClick={nextSlide} aria-label="Next Slide">
+            Next
+          </button>
         </div>
       </div>
     </div>

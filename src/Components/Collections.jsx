@@ -1,5 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../Styles/collections.css";
+import axios from "axios";
+
 import image1 from "../Images/collection1.jpg";
 import image2 from "../Images/collection2.jpg";
 import image3 from "../Images/collection3.jpg";
@@ -10,6 +13,19 @@ import Arrowleft from "../Images/arrowright.svg";
 
 const Collections = () => {
   const sliderRef = useRef(null);
+  const navigate = useNavigate();
+  const [collections, setCollections] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/collections/")
+      .then((response) => {
+        setCollections(response.data);
+      })
+      .catch((error) => {
+        console.error("error fetching", error);
+      });
+  }, []);
 
   useEffect(() => {
     const slider = sliderRef.current;
@@ -55,64 +71,31 @@ const Collections = () => {
       slider.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
+  const handleClick = (collectionName) => {
+    navigate(`/collection/${collectionName}`);
+  };
 
   return (
     <div>
       <div className="collections-main-all12" ref={sliderRef}>
-        <div className="all-main12">
-          <img src={image1} alt="Collection 1" />
-          <div className="under-main112">
-            <span>
-              <h3>Collection 1</h3>
-              <img src={Arrowleft} alt="Arrow" />
-            </span>
+        {collections.map((collection) => (
+          <div
+            key={collection._id}
+            className="all-main12"
+            onClick={() => handleClick(collection.collection_name)}
+          >
+            <img
+              src={collection.collection_image}
+              alt={collection.collection_name}
+            />
+            <div className="under-main112">
+              <span>
+                <h3>{collection.collection_name}</h3>
+                <img src={Arrowleft} alt="Arrow" />
+              </span>
+            </div>
           </div>
-        </div>
-        <div className="all-main12">
-          <img src={image2} alt="Collection 2" />
-          <div className="under-main112">
-            <span>
-              <h3>Collection 2</h3>
-              <img src={Arrowleft} alt="Arrow" />
-            </span>
-          </div>
-        </div>
-        <div className="all-main12">
-          <img src={image3} alt="Collection 3" />
-          <div className="under-main112">
-            <span>
-              <h3>Collection 3</h3>
-              <img src={Arrowleft} alt="Arrow" />
-            </span>
-          </div>
-        </div>
-        <div className="all-main12">
-          <img src={image4} alt="Collection 4" />
-          <div className="under-main112">
-            <span>
-              <h3>Collection 4</h3>
-              <img src={Arrowleft} alt="Arrow" />
-            </span>
-          </div>
-        </div>
-        <div className="all-main12">
-          <img src={image5} alt="Collection 5" />
-          <div className="under-main112">
-            <span>
-              <h3>Collection 5</h3>
-              <img src={Arrowleft} alt="Arrow" />
-            </span>
-          </div>
-        </div>
-        <div className="all-main12">
-          <img src={image6} alt="Collection 6" />
-          <div className="under-main112">
-            <span>
-              <h3>Collection 6</h3>
-              <img src={Arrowleft} alt="Arrow" />
-            </span>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

@@ -80,3 +80,26 @@
     margin-right: 10px;
   }
 }
+@media (min-width: 601px) and (max-width: 1024px) {
+  .banner1 {
+    height: 350px; /* Adjust height as needed */
+    padding: 40px; /* Add padding for spacing */
+    width: 87%;
+    margin: 0 auto; /* Center align horizontally */
+  }
+
+  .banner1 h1 {
+    font-size: 2.8rem; /* Adjust font size for medium screens */
+    margin-bottom: 20px; /* Add margin to separate from buttons */
+  }
+
+  .banner1-buttons {
+    top: 10px;
+  }
+
+  .buttons123 {
+    width: 180px; /* Adjust width for medium screens */
+    padding: 12px 30px; /* Adjust padding */
+    margin: 10px; /* Adjust margin */
+  }
+}

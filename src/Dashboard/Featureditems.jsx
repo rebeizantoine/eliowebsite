@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import axios from "axios";
 import "./dashboardhome2.css"; // Import your CSS file here
 
-const DashboardHome2 = () => {
+const FeaturedItems = () => {
   const [items, setItems] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
@@ -16,7 +16,8 @@ const DashboardHome2 = () => {
     const fetchItems = async () => {
       try {
         const response = await axios.get("http://localhost:8000/singleitem/");
-        setItems(response.data);
+
+        setItems(response.data.slice(0, 8));
       } catch (error) {
         console.error("Error fetching items:", error);
       }
@@ -79,9 +80,12 @@ const DashboardHome2 = () => {
   return (
     <div className="dashboard-home" id="featured-items">
       <ToastContainer />
+      <div className="note-box">
+        <p>Note: These are the items featured in the front, should be 8</p>
+      </div>
       <h2>Featured Items</h2>
       <Slider {...settings}>
-        {items.map((item, index) => (
+        {items.slice(0, 8).map((item, index) => (
           <div className="edit-featured-item" key={index}>
             <form>
               <div className="form-group">
@@ -329,4 +333,4 @@ const DashboardHome2 = () => {
   );
 };
 
-export default DashboardHome2;
+export default FeaturedItems;

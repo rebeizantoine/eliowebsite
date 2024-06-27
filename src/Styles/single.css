@@ -145,6 +145,10 @@
   transition: 0.3s ease smooth;
 }
 
+.fourth a:nth-child(1) {
+  margin-bottom: 0px;
+}
+
 .fourth a:hover {
   background-color: #f0f0f0; /* Optional: Change background on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Optional: Change shadow on hover */
@@ -323,4 +327,247 @@
 .flex-option img {
   width: 20px;
   height: 20px;
+}
+@media (min-width: 1450px) and (max-width: 1900px) {
+  .fourth {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+  }
+  .buyit-fourth {
+    width: 352px;
+    margin-left: -20px;
+  }
+  .quantity {
+    margin-left: 135px;
+  }
+  .second-p-here {
+    margin-left: 150px;
+  }
+  .accordion {
+    margin-left: 150px;
+  }
+}
+/* .additional-div {
+  display: none;
+} */
+
+@media (max-width: 400px) {
+  .additional-div3 {
+    display: block; /* Displayed only on screens with maximum width 350px */
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 30px;
+  }
+  .image-left-1 {
+    display: none;
+  }
+  .fourth {
+    margin-left: 200px;
+  }
+  .fourth button {
+    margin-left: -40px;
+  }
+  .fourth a {
+    padding: 0px;
+    margin-left: -60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .whatsapp-fourth {
+  }
+  .quantity {
+    margin-left: 220px;
+  }
+  .fifth {
+    margin-left: 40px;
+    margin-top: 20px;
+  }
+  .second-p-here {
+    margin-left: 200px;
+    width: 50%;
+  }
+  .fifth span {
+    margin-left: -30px;
+  }
+  .sixth {
+    margin-left: 150px;
+    max-width: 100%;
+  }
+  .accordion {
+    width: 300px;
+    margin-left: -10px;
+  }
+  .seventh p {
+    width: 65%;
+    margin-left: 40px;
+    margin-bottom: 50px;
+    margin-top: 400px;
+  }
+  .additional-div .slick-prev {
+    display: none !important;
+  }
+  .additional-div .slick-next {
+    display: none !important;
+  }
+  .additional-div {
+    display: block !important;
+  }
+}
+.customize-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.customize-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.additional-div1 {
+  display: block;
+  background-color: #f0f0f0;
+  padding: 10px;
+
+  width: 100%;
+}
+.additional-div1 {
+  width: 300px !important;
+  height: 300px !important;
+  margin-top: 750px;
+  position: static;
+  top: 13%;
+  right: 10%;
+}
+.additional-div1 .slick-prev {
+  display: none !important;
+}
+.additional-div1 .slick-next {
+  display: none !important;
+}
+.additional-div1 img {
+  width: 300px;
+}
+.customise-fourth {
+  position: relative !important;
+  left: -40px;
+}
+.buyit-fourth {
+  position: relative;
+  margin-right: 200px;
+  margin-top: 90px;
+}
+
+@media (min-width: 601px) and (max-width: 950px) {
+  .additional-div1 {
+    display: block;
+    background-color: #f0f0f0;
+    padding: 10px;
+
+    width: 100%;
+  }
+  .image-left-1 {
+    display: none;
+  }
+  .fourth {
+    margin-left: 200px;
+  }
+  .fourth button {
+    margin-left: -40px;
+  }
+  .fourth a {
+    padding: 0px;
+    margin-left: -40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .whatsapp-fourth {
+  }
+  .quantity {
+    margin-left: 220px;
+  }
+  .fifth {
+    margin-left: 40px;
+  }
+  .second-p-here {
+    margin-left: 200px;
+    width: 50%;
+  }
+  .fifth span {
+    margin-left: -30px;
+  }
+  .sixth {
+    margin-left: 150px;
+    max-width: 100%;
+  }
+  .accordion {
+    width: 300px;
+    margin-left: -10px;
+  }
+  .seventh p {
+    width: 50%;
+    height: auto;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    position: absolute;
+    right: 5%;
+    top: 61%;
+  }
+  .additional-div1 .slick-prev {
+    display: none !important;
+  }
+  .additional-div1 .slick-next {
+    display: none !important;
+  }
+}
+.customize-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.customize-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.additional-div1 {
+  width: 300px !important;
+  height: 300px !important;
+  position: absolute;
+  top: 3%;
+  right: 10%;
+}
+.additional-div1 img {
+  width: 300px;
+}
+.customise-fourth {
+  margin-left: 20px !important;
+}
+.buyit-fourth {
+  position: absolute;
+  right: -25%;
+  top: 22%;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }

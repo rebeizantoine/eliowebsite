@@ -1,47 +1,46 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../Images/LOGO.png";
 import smartphone from "../Images/smartphone.png";
 import Location from "../Images/location.png";
-import searchIcon from "../Images/search.png";
+import { CartContext } from "../Components/CartContext";
+import axios from "axios";
+import closeIcon from "../Images/close-circle-svgrepo-com.svg";
+
 import "../Styles/header.css";
-import Testing from "./Testing"; // Import the Testing component
 
 const Header = () => {
-  const [showSearch, setShowSearch] = useState(false);
-  const [showMenu, setShowMenu] = useState(false); // State to control the visibility of the Testing component
-  const searchRef = useRef(null);
   const navigate = useNavigate();
+  const { cartItems, emptyCart } = useContext(CartContext);
+  const [showCartPopup, setShowCartPopup] = useState(false);
+  const [contact, setContact] = useState({}); // Assuming you expect a single contact object
+  const [showSidebar, setShowSidebar] = useState(false); // State for sidebar visibility
 
-  const toggleSearch = () => {
-    setShowSearch(!showSearch);
+  const handleNavigation = (path) => {
+    navigate(path);
+    setShowSidebar(false); // Close sidebar on navigation
   };
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
-
-  const handleClickOutside = (event) => {
-    if (searchRef.current && !searchRef.current.contains(event.target)) {
-      setShowSearch(false);
-    }
+  const toggleCartPopup = () => {
+    setShowCartPopup(!showCartPopup);
   };
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    axios
+      .get("http://localhost:8000/contactsjdd/")
+      .then((response) => {
+        // Assuming response.data is an array with a single contact object
+        if (response.data.length > 0) {
+          setContact(response.data[0]); // Set the first contact object
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching contact:", error);
+      });
   }, []);
-  const handleNavigation = (path) => {
-    navigate(path);
-  };
 
   return (
     <div>
-      {/* Pass toggleMenu function as a prop to Testing component */}
-      {showMenu && <Testing toggleMenu={toggleMenu} />}
-
       <div className="header-top">
         <div className="logo-container">
           <img
@@ -52,13 +51,43 @@ const Header = () => {
           />
         </div>
         <div className="big-box-left">
+          <div className="cart-icon-container" onClick={toggleCartPopup}>
+            <svg
+              width="26px"
+              height="26px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+
+              <g
+                id="SVGRepo_tracerCarrier"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
+                  stroke="#a12b35"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </g>
+            </svg>
+            {cartItems.length > 0 && (
+              <div className="cart-icon-number">{cartItems.length}</div>
+            )}
+          </div>
           <div className="phone-box">
             <div className="icon-box">
               <img className="header-phone" src={smartphone} alt="Phone" />
             </div>
             <div className="heading">
-              <h4>Showroom</h4>
-              <p>Adonis, Zouk Mosbeh</p>
+              <h4>Phone</h4>
+              <p>{contact.contact_phonenumber}</p>
             </div>
           </div>
           <div className="phone-box">
@@ -67,57 +96,108 @@ const Header = () => {
             </div>
             <div className="heading">
               <h4>Showroom</h4>
-              <p>Adonis, Zouk Mosbeh</p>
+              <p>{contact.contact_location}</p>
             </div>
           </div>
         </div>
       </div>
 
       <div className="nav-container">
-        <div className="search-container" ref={searchRef}>
-          <img
-            src={searchIcon}
-            className="search-icon"
-            alt="Search"
-            onClick={toggleSearch}
-          />
-          {showSearch && (
-            <input
-              type="text"
-              className="search-bar"
-              placeholder="Search..."
-              autoFocus
-            />
-          )}
-        </div>
-
-        <i className="fa fa-bars" onClick={toggleMenu} id="real-one"></i>
-
         <nav className="nav-menu">
-          <span className="nav-item" onClick={() => handleNavigation("/")}>
+          <span
+            className="hideOnMobile nav-item"
+            onClick={() => handleNavigation("/")}
+          >
             Home
           </span>
           <span
-            className="nav-item"
-            onClick={() => handleNavigation("/steelwork")}
+            className="hideOnMobile nav-item"
+            onClick={() => handleNavigation("/artworks")}
           >
-            Steelwork
+            Artworks
           </span>
-          <span className="nav-item">Projects</span>
+          <span className="hideOnMobile nav-item">Projects</span>
           <span
-            className="nav-item"
+            className="hideOnMobile nav-item"
             onClick={() => handleNavigation("/collection")}
           >
             Metal Wall Art
           </span>
           <span
-            className="nav-item"
+            className="hideOnMobile nav-item"
             onClick={() => handleNavigation("/whatwedo")}
           >
             What We Do
           </span>
-          <span className="nav-item">Contact Us</span>
+          <span
+            className="hideOnMobile nav-item"
+            onClick={() => handleNavigation("/contactus")}
+          >
+            Contact Us
+          </span>
+          <li className="menu-button" onClick={() => setShowSidebar(true)}>
+            <a href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="26"
+                viewBox="0 96 960 960"
+                width="26"
+              >
+                <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
+              </svg>
+            </a>
+          </li>
         </nav>
+        {showSidebar && (
+          <nav className="bigger-1">
+            <ul className="sidebar123">
+              <li onClick={() => setShowSidebar(false)}>
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="26"
+                    viewBox="0 96 960 960"
+                    width="26"
+                  >
+                    <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231-231 231Z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="/" onClick={() => handleNavigation("/")}>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/artworks"
+                  onClick={() => handleNavigation("/artworks")}
+                >
+                  Artworks
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/collection"
+                  onClick={() => handleNavigation("/collection")}
+                >
+                  Collections
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/contactus"
+                  onClick={() => handleNavigation("/contactus")}
+                >
+                  Contact Us
+                </a>
+              </li>
+              {/* <li>
+                <a href="#">Login</a>
+              </li> */}
+            </ul>
+          </nav>
+        )}
       </div>
 
       <div className="info-bar">
@@ -125,6 +205,51 @@ const Header = () => {
         <span>Cash on delivery</span>
         <span>We can discuss prices</span>
       </div>
+
+      {showCartPopup && (
+        <div className="cart-popup">
+          <h3>Cart Items</h3>
+          <button
+            className="close-popup"
+            onClick={() => setShowCartPopup(false)}
+          >
+            <img src={closeIcon} alt="Close" />
+          </button>
+          <div className="cart-items">
+            {cartItems.length > 0 ? (
+              cartItems.map((item, index) => (
+                <div key={index} className="cart-item">
+                  <img
+                    src={item.item_image1}
+                    alt={item.item_name}
+                    className="cart-item-image"
+                  />
+                  <div className="cart-item-details">
+                    <p>{item.item_name}</p>
+                    <p>Color: {item.item_color1}</p>
+                    <p>${item.item_price}</p>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>Your cart is empty.</p>
+            )}
+          </div>
+          <div className="cart-popup-actions">
+            <button
+              onClick={() => {
+                emptyCart();
+                setShowCartPopup(false);
+              }}
+            >
+              Empty Cart
+            </button>
+            <button onClick={() => handleNavigation("/checkout")}>
+              Proceed to Checkout
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

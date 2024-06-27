@@ -1,0 +1,57 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  width: 80%;
+  max-width: 500px;
+  height: 250px;
+  font-family: Poppins;
+}
+
+.modal-content h2 {
+  font-size: 24px;
+  color: #333; /* Example style */
+  margin-bottom: 15px; /* Example style */
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #666; /* Example style */
+  margin-bottom: 20px; /* Example style */
+}
+
+.contact-us-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #a12b35;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-right: 20px;
+  width: 120px;
+  height: 45px;
+  margin: 10px 20px 40px -20px;
+}
+
+.close-popup-button {
+  background-color: #dc3545;
+}
+.close-svg-container {
+  position: absolute;
+  top: 0px;
+  left: 95%;
+}

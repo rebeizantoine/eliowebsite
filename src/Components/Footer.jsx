@@ -45,23 +45,19 @@ const Footer = () => {
         <nav className="footer-menu">
           <ul>
             <li>
-              <a href="#">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="#">Steelwork Projects</a>
+              <a href="/artworks">Artworks</a>
             </li>
             <li>
-              <a href="#">Metal Art Work</a>
+              <a href="/collection">Our Collections</a>
             </li>
-            <li>
-              <a href="#">What We Do</a>
-            </li>
-
-            <li>
+            {/* <li>
               <a href="#">Privacy Policy</a>
-            </li>
+            </li> */}
             <li>
-              <a href="#">Contact Us</a>
+              <a href="/contactus">Contact Us</a>
             </li>
           </ul>
         </nav>

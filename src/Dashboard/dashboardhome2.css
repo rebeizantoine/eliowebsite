@@ -37,6 +37,7 @@
 
 .form-group {
   margin-bottom: 15px;
+  margin-right: 20px;
 }
 
 .form-group label {
@@ -98,4 +99,48 @@
   .edit-btn {
     margin: 10px 0; /* Adding margin for better spacing on mobile */
   }
+}
+.slick-prev,
+.slick-next {
+  z-index: 1;
+  top: -2%; /* Adjust the top value to position the arrows higher */
+  width: 30px; /* Optional: Adjust the width of the arrows */
+  height: 40px; /* Optional: Adjust the height of the arrows */
+  background: #846f63; /* Optional: Adjust the background color of the arrows */
+  border-radius: 50%; /* Optional: Make the arrows round */
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 25px; /* Adjust the font size of the arrow icons */
+  color: white; /* Adjust the color of the arrow icons */
+}
+
+.slick-prev {
+  left: -35px; /* Adjust the left position of the previous arrow */
+}
+.slick-prev:hover {
+  background-color: #ccc !important;
+}
+
+.slick-next {
+  right: -35px; /* Adjust the right position of the next arrow */
+}
+.slick-next:hover {
+  background-color: #ccc !important;
+}
+.note-box {
+  background-color: #ffefc1;
+  color: #333;
+  padding: 10px 20px;
+  border: 1px solid #f0c36d;
+  border-radius: 5px;
+  z-index: 1;
+  font-size: 14px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.note-box p {
+  margin: 0;
 }

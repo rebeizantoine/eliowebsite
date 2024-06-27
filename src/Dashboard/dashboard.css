@@ -58,10 +58,10 @@ textarea {
 
 .logo-maya {
   height: auto;
-  width: 400px;
-
+  width: 100px;
   margin-left: 100px;
   padding: 0px 0px;
+  margin-top: 50px;
 }
 
 .header p {

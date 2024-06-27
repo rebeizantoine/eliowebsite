@@ -48,12 +48,12 @@
   transform: scale(1.1);
 }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
   .designer-banner {
     background-size: cover;
     background-position: center;
     background-size: auto;
-    height: 400px; /* Adjust as needed */
+    height: 300px; /* Adjust as needed */
     display: block;
     justify-content: center;
     align-items: center;
@@ -103,5 +103,39 @@
   .designer-button button:hover {
     cursor: pointer;
     transform: scale(1.1);
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .designer-banner {
+    height: 480px; /* Adjust height as needed */
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  .white-designer {
+    width: 80%; /* Adjust width for medium screens */
+    padding: 30px; /* Adjust padding */
+    height: auto; /* Allow height to adjust based on content */
+    text-align: center; /* Center align text */
+  }
+
+  .title-designer {
+    font-size: 24px; /* Adjust font size for medium screens */
+    width: 100%; /* Allow width to adjust */
+    margin-left: 0; /* Reset left margin */
+  }
+
+  .p-designer {
+    font-size: 16px; /* Adjust font size for medium screens */
+    line-height: 1.6; /* Adjust line height */
+    margin-left: 0; /* Reset left margin */
+  }
+
+  .designer-button {
+    margin-top: 20px; /* Adjust top margin for spacing */
+  }
+
+  .designer-button button {
+    margin-left: 0; /* Reset left margin */
   }
 }

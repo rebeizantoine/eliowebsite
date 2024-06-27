@@ -2,6 +2,7 @@
   width: 100;
   height: 160px;
 }
+
 .collection-title-big-one {
   font-family: Montserrat, sans-serif;
   font-style: normal;
@@ -9,6 +10,7 @@
   letter-spacing: 2px;
   font-size: 40px;
 }
+
 .collection-p-big-one {
   font-family: "DM sans", sans-serif;
   font-style: normal;
@@ -32,6 +34,7 @@
   margin-left: -90px;
   transition: 0.3s ease;
 }
+
 .image-priceand131:hover {
   transform: scale(1.1);
   cursor: pointer;
@@ -94,6 +97,7 @@
   cursor: pointer;
   transform: scale(1.2);
 }
+
 .pagination31 {
   display: flex;
   justify-content: center;
@@ -113,6 +117,7 @@
   background-color: #ccc;
   cursor: not-allowed;
 }
+
 .priceand31-p21 {
   font-size: 14px;
   font-family: Montserrat, sans-serif;
@@ -126,7 +131,7 @@
   width: 200px;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
   .item-grid-container131 {
     grid-template-columns: repeat(2, 1fr);
     margin-left: 10px; /* Adjust margin for smaller screens */
@@ -156,5 +161,94 @@
   }
   .priceand-p2131 {
     margin-right: 30px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+  .item-grid-container131 {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 10px;
+  }
+
+  .image-priceand131 {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .priceand131 {
+    max-width: 100%;
+    text-align: center;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .priceand131 h1,
+  .priceand131 p {
+    width: 100%;
+    text-align: center;
+  }
+
+  .priceand-h2131 {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .priceand31-p21 {
+    text-align: center;
+    left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 1450px) and (max-width: 1900px) {
+  .item-grid-container131 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px; /* Adjust the gap as needed */
+    margin: 20px 50px; /* Adjust the margin as needed */
+  }
+
+  .image-priceand131 {
+    width: 300px;
+    height: 310px;
+    margin-left: 0;
+  }
+
+  .priceand131 {
+    max-width: 300px;
+    height: auto; /* Remove fixed height */
+    margin-left: 80px;
+  }
+
+  .priceand131 h1 {
+    font-size: 18px;
+    line-height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 5px 0; /* Add some margin for spacing */
+  }
+
+  .priceand131 p {
+    font-size: 14px;
+    line-height: 1.2;
+    margin-top: 5px; /* Adjust margin as needed */
+  }
+
+  .priceand-h2131 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    margin-left: 45%;
+  }
+
+  .priceand31-p21 {
+    font-size: 16px;
+    position: relative;
+    left: 83.5%;
+    width: 220px;
+  }
+
+  .pagination31 button {
+    width: 90px;
   }
 }

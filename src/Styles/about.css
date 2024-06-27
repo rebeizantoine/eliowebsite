@@ -1,26 +1,20 @@
-.image-left img {
-  width: 600px;
-  position: relative;
-  left: -55px;
-}
-.about-homepage {
+.about-container {
   display: flex;
   margin-left: 70px;
   margin-top: 70px;
 }
-.about-homepage p {
-  width: 550px;
-  height: 90px;
-  text-align: left;
-  font-family: Montserrat, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0.2px;
-  line-height: 30px;
-  color: #827b7b;
-  margin-top: -10px;
+
+.about-image img {
+  width: 600px;
+  position: relative;
+  left: -55px;
 }
-.about-homepage h2 {
+
+.about-content {
+  margin-left: 0;
+}
+
+.about-title {
   margin: 0;
   font-size: 50px;
   color: #000;
@@ -34,7 +28,20 @@
   width: 600px;
 }
 
-.about-homepage button {
+.about-description {
+  width: 550px;
+  height: 90px;
+  text-align: left;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  line-height: 30px;
+  color: #827b7b;
+  margin-top: -10px;
+}
+
+.about-button {
   padding: 12px 30px;
   color: white;
   background-color: #a12b35;
@@ -47,46 +54,136 @@
   margin-left: -430px;
 }
 
-.about-homepage button:hover {
+.about-button:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
-.homepage-right {
-  margin-left: 0px;
-}
-@media (max-width: 350px) {
-  .about-homepage {
-    margin-left: 17px;
-    margin-top: 40px;
-    width: 100% !important; /* Adjust width for smaller screens */
+
+/* Responsive Design for max-width: 350px */
+@media (max-width: 400px) {
+  .about-container {
     flex-direction: column;
-  }
-  .homepage-right {
+    align-items: center;
     margin-left: 0px;
-  }
-
-  .about-homepage h2 {
-    font-size: 32px; /* Further reduce font size for smaller screens */
-    margin-bottom: 10px;
-    text-align: left;
-    width: 100%; /* Full width on smaller screens */
-    letter-spacing: 0.1em;
-  }
-
-  .about-homepage p {
-    margin-bottom: 10px;
-    width: 100%; /* Full width on smaller screens */
-    line-height: 1.6em;
-  }
-
-  .about-homepage button {
-    margin-bottom: 20px;
-    margin-top: 10px;
-    margin-left: -20px; /* Center button on smaller screens */
-    width: 100%; /* Full width on smaller screens */
-    padding: 10px; /* Adjust padding for smaller screens */
-  }
-  .image-left img {
+    margin-top: 40px;
     width: 100%;
+  }
+
+  .about-image img {
+    width: 100%;
+    left: 0;
+  }
+
+  .about-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 0.1em;
+    margin-top: 30px;
+  }
+
+  .about-description {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    line-height: 1.6em;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .about-button {
+    margin-left: 0;
+    width: 90%;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Responsive Design for min-width: 1450px and max-width: 1900px */
+@media (min-width: 1450px) and (max-width: 1900px) {
+  .about-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50px;
+  }
+
+  .about-image {
+    width: 600px;
+    height: auto;
+    margin-right: 50px;
+  }
+
+  .about-content {
+    max-width: 800px;
+  }
+
+  .about-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .about-description {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .about-button {
+    margin-left: 0;
+    width: auto;
+    padding: 12px 24px;
+    margin-top: 50px;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    margin-top: 40px;
+    width: 100%;
+    padding: 0 0px; /* Adjusting padding for better layout */
+    padding-right: 0px;
+    text-align: left;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 800px; /* Limiting image width */
+    left: 0;
+  }
+
+  .about-content {
+    max-width: 100%; /* Full width for content */
+    text-align: center;
+  }
+
+  .about-title {
+    font-size: 40px; /* Adjusting font size */
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 0.1em;
+    margin-top: 30px;
+  }
+
+  .about-description {
+    width: 90%;
+    height: auto;
+    text-align: center;
+    line-height: 1.6em;
+    margin-top: 10px;
+    margin-bottom: 20px; /* Adjusting margin */
+    margin-left: 35 px;
+  }
+
+  .about-button {
+    margin-left: 0;
+    width: 90%; /* Making button width responsive */
+    padding: 12px 24px;
+    margin-top: 20px;
+    margin-bottom: 40px; /* Adjusting margin */
   }
 }

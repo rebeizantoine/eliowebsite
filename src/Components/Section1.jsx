@@ -1,79 +1,67 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../Styles/section1.css";
-import image1 from "../Images/imagelittle1.jpg";
-import image2 from "../Images/imagelittle2.jpg";
-import image3 from "../Images/imagelittle3.jpg";
-import image4 from "../Images/imagelittle4.jpg";
-import image5 from "../Images/imagelittle5.jpg";
-import image6 from "../Images/imagelittle6.jpg";
-import image7 from "../Images/imagelittle7.jpg";
-import image8 from "../Images/imagelittle8.jpg";
 
 const Section1 = () => {
+  const [items, setItems] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8000/singleitem/items/featured"
+        );
+        setItems(response.data);
+      } catch (error) {
+        console.error("Error fetching items", error);
+      }
+    };
+
+    fetchItems();
+  }, []);
+
+  const handlenavigateClick = () => {
+    navigate(`/steelwork`);
+  };
+
+  const handleItemClick = (item) => {
+    if (item && item.item_name) {
+      // Check if item and item_name are defined
+      const formattedName = item.item_name.toLowerCase().replace(/\s+/g, "-");
+      localStorage.setItem("currentItemId", item._id);
+      navigate(`/single/${formattedName}`);
+    } else {
+      console.error("Item or item_name is undefined");
+    }
+  };
+
   return (
     <div>
       <div>
         <h2 className="priceand-h2">Customizable Home Bars</h2>
-        <div className="item-grid-container">
-          <div className="item-grid-1">
-            <img src={image1} alt="" className="image-priceand" />
-            <div className="priceand">
-              <h1>LEO Wall Mounted Bar</h1>
-              <p>From $270 USD</p>
+        <div className="item-grid-container123">
+          {items.map((item) => (
+            <div
+              className="item-grid-1"
+              key={item._id}
+              onClick={() => handleItemClick(item)} // Ensure item is passed as an argument
+            >
+              <img
+                src={item.item_image1}
+                alt={item.item_name}
+                className="image-priceand"
+              />
+              <div className="priceand">
+                <h1>{item.item_name}</h1>
+                <p>From ${item.item_price} USD</p>
+              </div>
             </div>
-          </div>
-          <div className="item-grid-1">
-            <img src={image2} alt="" className="image-priceand" />
-            <div className="priceand">
-              <h1>LEO Wall Mounted Bar</h1>
-              <p>From $270 USD</p>
-            </div>
-          </div>
-          <div className="item-grid-1">
-            <img src={image3} alt="" className="image-priceand" />
-            <div className="priceand">
-              <h1>LEO Wall Mounted Bar</h1>
-              <p>From $270 USD</p>
-            </div>
-          </div>
-          <div className="item-grid-1">
-            <img src={image4} alt="" className="image-priceand" />
-            <div className="priceand">
-              <h1>LEO Wall Mounted Bar</h1>
-              <p>From $270 USD</p>
-            </div>
-          </div>
-          <div className="item-grid-1">
-            <img src={image5} alt="" className="image-priceand" />
-            <div className="priceand">
-              <h1>LEO Wall Mounted Bar</h1>
-              <p>From $270 USD</p>
-            </div>
-          </div>
-          <div className="item-grid-1">
-            <img src={image6} alt="" className="image-priceand" />
-            <div className="priceand">
-              <h1>LEO Wall Mounted Bar</h1>
-              <p>From $270 USD</p>
-            </div>
-          </div>
-          <div className="item-grid-1">
-            <img src={image7} alt="" className="image-priceand" />
-            <div className="priceand">
-              <h1>LEO Wall Mounted Bar</h1>
-              <p>From $270 USD</p>
-            </div>
-          </div>
-          <div className="item-grid-1">
-            <img src={image8} alt="" className="image-priceand" />
-            <div className="priceand">
-              <h1>LEO Wall Mounted Bar</h1>
-              <p>From $270 USD</p>
-            </div>
-          </div>
+          ))}
         </div>
         <div className="priceand-viewall">
-          <button>View all</button>
+          <button onClick={handlenavigateClick}>View all</button>
         </div>
       </div>
     </div>
