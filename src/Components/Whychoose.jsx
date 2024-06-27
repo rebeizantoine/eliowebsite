@@ -8,7 +8,7 @@ const Whychoose = () => {
     {
       title: "Locally-made furniture",
       description:
-        "Choose locally-made furniture for superior quality and craftsmanship. High-quality materials sourced from the local area ensure unparalleled quality that exceeds global manufacturing standards. Imported furniture often involves lower quality materials and questionable durability to cut costs. Choose local, choose quality.",
+        "Our locally-made furniture showcases unparalleled craftsmanship and design expertise rooted in our community. Each piece reflects our commitment to quality and innovation, offering a unique blend of style and functionality.",
     },
     {
       title: "Crafted with Local Expertise",

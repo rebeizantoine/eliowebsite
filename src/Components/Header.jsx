@@ -116,19 +116,13 @@ const Header = () => {
           >
             Artworks
           </span>
-          <span className="hideOnMobile nav-item">Projects</span>
           <span
             className="hideOnMobile nav-item"
             onClick={() => handleNavigation("/collection")}
           >
-            Metal Wall Art
+            Collections
           </span>
-          <span
-            className="hideOnMobile nav-item"
-            onClick={() => handleNavigation("/whatwedo")}
-          >
-            What We Do
-          </span>
+
           <span
             className="hideOnMobile nav-item"
             onClick={() => handleNavigation("/contactus")}

@@ -268,3 +268,32 @@
     transition: transform 0.3s ease-in-out;
   }
 }
+@media (min-width: 1200px) {
+  .slider-controls {
+    display: none !important;
+  }
+
+  .grid-item-whychoose {
+    display: block !important;
+    width: auto;
+    height: auto;
+    margin-right: 20px;
+    flex-shrink: 1;
+  }
+
+  .grid-item-whychoose.active {
+    transform: none !important;
+  }
+  .topwhychoose {
+    margin-left: 120px;
+  }
+  .slider-container h3 {
+    font-size: 24px;
+    text-align: left !important;
+    margin-left: 40px;
+    width: 100%;
+  }
+  .slider-container {
+    padding-right: 0px !important;
+  }
+}
