@@ -77,6 +77,7 @@ const Collections = () => {
 
   return (
     <div>
+      <h2 className="priceand-h2">Our Collections</h2>
       <div className="collections-main-all12" ref={sliderRef}>
         {collections.map((collection) => (
           <div
