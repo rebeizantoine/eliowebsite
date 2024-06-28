@@ -25,6 +25,7 @@ import PurchasePage from "./Components/PurchasePage";
 import ThankyouPage from "./Components/ThankyouPage";
 import AdminLogin from "./Components/Adminlogin";
 import ProtectedRoute from "./Components/ProtectedRoute";
+import 
 
 function App() {
   return (
@@ -216,6 +217,16 @@ function App() {
             <Route
               path="/dashboard"
               element={<ProtectedRoute component={Dashboard} />}
+            />
+            <Route
+              path="*"
+              element={
+                <>
+                  <Header />
+                  <NotFound />
+                  <Footer />
+                </>
+              }
             />
           </Routes>
         </Router>
