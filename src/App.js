@@ -25,7 +25,7 @@ import PurchasePage from "./Components/PurchasePage";
 import ThankyouPage from "./Components/ThankyouPage";
 import AdminLogin from "./Components/Adminlogin";
 import ProtectedRoute from "./Components/ProtectedRoute";
-import 
+import NotFound from "./Components/Notfound";
 
 function App() {
   return (
