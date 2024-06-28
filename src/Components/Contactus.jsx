@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const Contactus = () => {
+const ContactUs = () => {
   useEffect(() => {
     // Create and append the Tally widget script to the document head
     const script = document.createElement("script");
@@ -22,16 +22,33 @@ const Contactus = () => {
   }, []);
 
   return (
-    <iframe
-      data-tally-src="https://tally.so/embed/3qBpj2?transparentBackground=1&dynamicHeight=1"
-      loading="lazy"
-      width="100%"
-      height="1015"
-      frameBorder="0"
-      marginHeight="0"
-      marginWidth="0"
-      title="Contact Us form"
-    ></iframe>
+    <div
+      style={{
+        margin: 0,
+        height: "100vh",
+        overflow: "hidden",
+        position: "relative",
+      }}
+    >
+      <iframe
+        data-tally-src="https://tally.so/r/3qBpj2?transparentBackground=1"
+        width="100%"
+        height="100%"
+        frameBorder="0"
+        marginHeight="0"
+        marginWidth="0"
+        title="Contact Us form"
+        style={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+          border: 0,
+        }}
+      ></iframe>
+    </div>
   );
 };
-export default Contactus;
+
+export default ContactUs;
