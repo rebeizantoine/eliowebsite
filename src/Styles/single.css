@@ -10,6 +10,9 @@
   position: relative;
   left: 0px;
 }
+.third {
+  display: none;
+}
 .right-everything .first h4 {
   margin-top: 0;
   margin-bottom: 0;

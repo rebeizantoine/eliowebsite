@@ -23,7 +23,7 @@ const Section1 = () => {
   }, []);
 
   const handlenavigateClick = () => {
-    navigate(`/steelwork`);
+    navigate(`/artworks`);
   };
 
   const handleItemClick = (item) => {

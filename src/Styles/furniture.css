@@ -262,3 +262,9 @@
     margin-left: 0; /* Reset left margin */
   }
 }
+
+@media (min-width: 1650px) {
+  .priceand1 {
+    margin-left: 70px; /* Reset left margin for item details */
+  }
+}

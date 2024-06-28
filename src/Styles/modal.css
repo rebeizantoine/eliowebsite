@@ -55,3 +55,6 @@
   top: 0px;
   left: 95%;
 }
+.close-svg-container:hover {
+  cursor: pointer;
+}

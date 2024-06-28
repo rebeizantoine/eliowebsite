@@ -178,7 +178,7 @@ const SingleFetched = () => {
             </div>
           </div>
           <div className="quantity">
-            <h4>Quantity available: {item.quantity}</h4>
+            <h4>Quantity available: {item.quantity ? item.quantity : 20}</h4>
           </div>
           <div className="fourth">
             <a href="" className="whatsapp-fourth">
