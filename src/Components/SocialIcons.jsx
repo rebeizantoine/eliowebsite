@@ -12,7 +12,7 @@ const SocialIcons = () => {
   useEffect(() => {
     // Fetch social media links from API
     axios
-      .get("http://localhost:8000/contactsjdd/")
+      .get("https://eliowebsite.onrender.com/contactsjdd/")
       .then((response) => {
         console.log("API response:", response.data);
         if (response.data && response.data.length > 0) {

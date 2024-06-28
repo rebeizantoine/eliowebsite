@@ -15,7 +15,9 @@ const PurchasedDashboard = () => {
 
   const fetchPurchasedItems = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/purchased/");
+      const response = await axios.get(
+        "https://eliowebsite.onrender.com/purchased/"
+      );
       setPurchasedItems(response.data);
     } catch (error) {
       console.error("Error fetching purchased items", error);
@@ -35,7 +37,7 @@ const PurchasedDashboard = () => {
   const handleSaveClick = async () => {
     try {
       await axios.put(
-        `http://localhost:8000/purchased/${currentItem._id}`,
+        `https://eliowebsite.onrender.com/purchased/${currentItem._id}`,
         currentItem
       );
       setPurchasedItems((prevItems) =>

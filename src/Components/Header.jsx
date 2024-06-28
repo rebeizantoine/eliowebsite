@@ -27,7 +27,7 @@ const Header = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/contactsjdd/")
+      .get("https://eliowebsite.onrender.com/contactsjdd/")
       .then((response) => {
         // Assuming response.data is an array with a single contact object
         if (response.data.length > 0) {

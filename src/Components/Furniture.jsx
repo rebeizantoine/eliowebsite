@@ -13,7 +13,7 @@ const Furniture = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/singleitem")
+      .get("https://eliowebsite.onrender.com/singleitem")
       .then((response) => {
         setItems(response.data);
       })

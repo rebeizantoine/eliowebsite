@@ -18,7 +18,7 @@ const Collections = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/collections/")
+      .get("https://eliowebsite.onrender.com/collections/")
       .then((response) => {
         setCollections(response.data);
       })

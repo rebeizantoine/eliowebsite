@@ -11,7 +11,7 @@ const Section1 = () => {
     const fetchItems = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/singleitem/items/featured"
+          "https://eliowebsite.onrender.com/singleitem/items/featured"
         );
         setItems(response.data);
       } catch (error) {

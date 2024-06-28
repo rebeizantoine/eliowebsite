@@ -52,7 +52,10 @@ const PurchasePage = () => {
     };
 
     try {
-      await axios.post("http://localhost:8000/purchased/add", payload);
+      await axios.post(
+        "https://eliowebsite.onrender.com/purchased/add",
+        payload
+      );
       toast.success("Order submitted successfully!");
 
       emptyCart();

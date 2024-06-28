@@ -12,7 +12,9 @@ function DashboardCV() {
   useEffect(() => {
     async function fetchContacts() {
       try {
-        const response = await axios.get("http://localhost:8000/contactsjdd");
+        const response = await axios.get(
+          "https://eliowebsite.onrender.com/contactsjdd"
+        );
         setContacts(response.data);
       } catch (error) {
         console.error("Error fetching contacts:", error);
@@ -23,7 +25,9 @@ function DashboardCV() {
 
   const handleDeleteContact = async (contactId) => {
     try {
-      await axios.delete(`http://localhost:8000/contactsjdd/${contactId}`);
+      await axios.delete(
+        `https://eliowebsite.onrender.com/contactsjdd/${contactId}`
+      );
       setContacts((prevContacts) =>
         prevContacts.filter((contact) => contact._id !== contactId)
       );
@@ -51,7 +55,7 @@ function DashboardCV() {
     try {
       const { _id, ...updatedContact } = currentContact;
       const response = await axios.put(
-        `http://localhost:8000/contactsjdd/${_id}`,
+        `https://eliowebsite.onrender.com/contactsjdd/${_id}`,
         updatedContact
       );
       setContacts((prevContacts) =>

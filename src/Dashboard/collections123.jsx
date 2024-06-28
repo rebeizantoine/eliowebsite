@@ -21,7 +21,7 @@ const Collections123 = () => {
 
   const fetchCollections = () => {
     axios
-      .get("http://localhost:8000/collections/")
+      .get("https://eliowebsite.onrender.com/collections/")
       .then((response) => {
         setCollections(response.data);
       })
@@ -32,7 +32,7 @@ const Collections123 = () => {
 
   const handleDelete = (collectionId) => {
     axios
-      .delete(`http://localhost:8000/collections/${collectionId}`)
+      .delete(`https://eliowebsite.onrender.com/collections/${collectionId}`)
       .then(() => {
         setCollections((prevCollections) =>
           prevCollections.filter(
@@ -76,7 +76,7 @@ const Collections123 = () => {
 
     axios
       .put(
-        `http://localhost:8000/collections/${currentCollection._id}`,
+        `https://eliowebsite.onrender.com/collections/${currentCollection._id}`,
         formData,
         {
           headers: {
@@ -140,7 +140,7 @@ const Collections123 = () => {
     formData.append("collection_image", newCollection.collection_image);
 
     axios
-      .post("http://localhost:8000/collections/", formData, {
+      .post("https://eliowebsite.onrender.com/collections/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

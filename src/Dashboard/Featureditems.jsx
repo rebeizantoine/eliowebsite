@@ -15,7 +15,9 @@ const FeaturedItems = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/singleitem/");
+        const response = await axios.get(
+          "https://eliowebsite.onrender.com/singleitem/"
+        );
 
         setItems(response.data.slice(0, 8));
       } catch (error) {
@@ -34,7 +36,7 @@ const FeaturedItems = () => {
   const handleSave = async (index) => {
     try {
       await axios.put(
-        `http://localhost:8000/singleitem/${items[index]._id}`,
+        `https://eliowebsite.onrender.com/singleitem/${items[index]._id}`,
         items[index]
       );
       setEditIndex(null);

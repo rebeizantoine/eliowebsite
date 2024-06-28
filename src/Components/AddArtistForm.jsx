@@ -42,7 +42,7 @@ const AddArtistForm = ({ onCancel, onSuccess }) => {
     try {
       const formDataObject = new FormData(formRef.current);
       const response = await axios.post(
-        "http://localhost:8000/singleitem/add",
+        "https://eliowebsite.onrender.com/singleitem/add",
         formDataObject
       );
       onSuccess(response.data);
