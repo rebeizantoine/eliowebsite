@@ -6,14 +6,18 @@ const ContactUs = () => {
     const script = document.createElement("script");
     script.src = "https://tally.so/widgets/embed.js";
     script.async = true;
-    document.head.appendChild(script);
 
-    // Load Tally embeds after the script is loaded
     script.onload = () => {
       if (window.Tally) {
         window.Tally.loadEmbeds();
       }
     };
+
+    script.onerror = () => {
+      console.error("Failed to load the Tally script.");
+    };
+
+    document.head.appendChild(script);
 
     // Clean up the script when the component unmounts
     return () => {
