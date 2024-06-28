@@ -104,7 +104,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .item-grid-container {
     grid-template-columns: repeat(2, 1fr);
     margin-left: -60px !important; /* Adjust margin for smaller screens */

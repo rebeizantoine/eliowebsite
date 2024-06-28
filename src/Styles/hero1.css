@@ -53,7 +53,7 @@
 }
 
 /* Media query for small screens */
-@media (max-width: 390px) {
+@media (max-width: 450px) {
   .banner1 {
     height: auto; /* Allow height to adjust based on content */
     padding: 20px; /* Add padding for spacing */

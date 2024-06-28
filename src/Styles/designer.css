@@ -48,7 +48,7 @@
   transform: scale(1.1);
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .designer-banner {
     background-size: cover;
     background-position: center;

@@ -58,7 +58,7 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .collections-main-all12 {
     display: flex;
     overflow-x: scroll;

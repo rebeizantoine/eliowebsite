@@ -111,7 +111,7 @@
 .social-icon-card4:hover .gmail {
   fill: white;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .social-icons-container {
     left: auto;
     top: auto;
