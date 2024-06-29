@@ -182,3 +182,8 @@
     font-size: 16px;
   }
 }
+@media (min-width: 1400px) and (max-width: 1700px) {
+  .item-grid-container123 {
+    margin-left: 10px !important;
+  }
+}

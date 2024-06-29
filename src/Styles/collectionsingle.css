@@ -252,3 +252,11 @@
     width: 90px;
   }
 }
+@media (min-width: 1400px) and (max-width: 1700px) {
+  .item-grid-container131 {
+    margin-left: 10px !important;
+  }
+  .priceand131 {
+    margin-left: 35px;
+  }
+}
