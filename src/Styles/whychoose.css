@@ -18,6 +18,7 @@
   position: relative;
   left: -520px;
   margin-bottom: 30px;
+  color: #f6f0e6;
 }
 
 .grid-item-whychoose {
@@ -96,11 +97,16 @@
 
   .slider-controls button {
     padding: 10px 20px;
-    background-color: #a12b35;
-    color: white;
+    background-color: #f6f0e6;
+    color: #292435;
     border: none;
     cursor: pointer;
     width: 90px;
+  }
+  .slider-controls button:hover {
+    color: #292435;
+    background-color: #f6f0e6;
+    border: 2px #292435 solid;
   }
 
   .grid-item-whychoose h3 {
@@ -162,8 +168,6 @@
 
   .slider-controls button {
     padding: 10px 20px;
-    background-color: #a12b35;
-    color: white;
     border: none;
     cursor: pointer;
     display: none;
@@ -225,8 +229,6 @@
 
   .slider-controls button {
     padding: 12px 24px;
-    background-color: #a12b35;
-    color: white;
     border: none;
     cursor: pointer;
     width: 120px;
@@ -346,8 +348,7 @@
 
   .slider-controls button {
     padding: 12px 24px;
-    background-color: #a12b35;
-    color: white;
+
     border: none;
     cursor: pointer;
     width: 120px;

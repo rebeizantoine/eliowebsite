@@ -17,7 +17,7 @@
 .about-title {
   margin: 0;
   font-size: 50px;
-  color: #000;
+  color: #f6f0e6;
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -37,14 +37,14 @@
   font-weight: 400;
   letter-spacing: 0.2px;
   line-height: 30px;
-  color: #827b7b;
+  color: #ede4d4;
   margin-top: -10px;
 }
 
 .about-button {
   padding: 12px 30px;
-  color: white;
-  background-color: #a12b35;
+  color: #282929;
+  background-color: #ede4d4;
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -57,6 +57,9 @@
 .about-button:hover {
   cursor: pointer;
   transform: scale(1.2);
+  color: #ede4d4;
+  background-color: #282929;
+  border: #ede4d4 2px solid;
 }
 
 /* Responsive Design for max-width: 350px */

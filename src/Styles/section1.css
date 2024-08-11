@@ -32,7 +32,7 @@
   font-size: 16px;
   margin-bottom: -5px;
   line-height: 17px;
-  color: #000;
+  color: #f6f0e6;
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -50,7 +50,7 @@
 .priceand-h2 {
   margin: 0;
   font-size: 30px;
-  color: #000;
+  color: #f6f0e6;
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -62,8 +62,8 @@
 
 .priceand-viewall button {
   padding: 12px 30px;
-  color: white;
-  background-color: #a12b35;
+  color: #282929;
+  background-color: #ede4d4;
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -75,6 +75,9 @@
 .priceand-viewall button:hover {
   cursor: pointer;
   transform: scale(1.2);
+  background-color: #282929;
+  color: #ede4d4;
+  border: #ede4d4 2px solid;
 }
 
 /* Responsive Styles */
@@ -165,6 +168,7 @@
   .priceand h1 {
     font-size: 18px;
     line-height: 20px;
+    color: #f6f0e6;
   }
 
   .priceand p {
@@ -175,6 +179,7 @@
   .priceand-h2 {
     font-size: 36px;
     margin-bottom: 50px;
+    color: #f6f0e6;
   }
 
   .priceand-viewall button {

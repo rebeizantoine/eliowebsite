@@ -37,15 +37,18 @@
   box-sizing: border-box;
   padding: 0.6rem 2rem 0.6rem;
   border-radius: 0;
-  background-color: rgba(161, 43, 53, 1);
-  box-shadow: 0 0 0 0.1rem rgba(161, 43, 53, 1);
-  color: white;
+  background-color: #f6f0e6;
+  color: #292435;
+  box-shadow: 0 0 0 0.1rem #292435;
   transition: 0.3s ease;
   margin-top: 20px;
 }
 .designer-button button:hover {
   cursor: pointer;
   transform: scale(1.1);
+  color: #f6f0e6;
+  background-color: #292435;
+  border: 2px solid #f6f0e6;
 }
 
 @media (max-width: 450px) {
@@ -93,9 +96,8 @@
     box-sizing: border-box;
     padding: 0.6rem 2rem 0.6rem;
     border-radius: 0;
-    background-color: rgba(161, 43, 53, 1);
-    box-shadow: 0 0 0 0.1rem rgba(161, 43, 53, 1);
-    color: white;
+    color: #292435;
+
     transition: 0.3s ease;
     margin-top: 20px;
     margin-left: 0px;

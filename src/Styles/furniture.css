@@ -12,6 +12,7 @@
   font-weight: 400;
   letter-spacing: 0.2px;
   line-height: 30px;
+  color: #f6f0e6;
 }
 .bigofbigod {
   margin-bottom: 30px !important;
@@ -38,7 +39,7 @@
   font-size: 16px;
   margin-bottom: -5px;
   line-height: 17px;
-  color: #000;
+  color: #f6f0e6;
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -58,7 +59,7 @@
 .priceand-h21 {
   margin: 0;
   font-size: 30px;
-  color: #000;
+  color: #f6f0e6;
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -96,8 +97,8 @@
   margin-top: 20px;
   padding: 10px 15px;
   border: none;
-  background-color: #333;
-  color: #fff;
+  background-color: #f6f0e6;
+  color: #292435;
   cursor: pointer;
   width: 80px;
 }

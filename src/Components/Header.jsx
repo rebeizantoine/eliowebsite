@@ -6,7 +6,9 @@ import Location from "../Images/location.png";
 import { CartContext } from "../Components/CartContext";
 import axios from "axios";
 import closeIcon from "../Images/close-circle-svgrepo-com.svg";
-
+import smartphone2 from "../Images/smartphone-free-svgrepo-com.svg";
+import location2 from "../Images/location2.svg";
+import logo2 from "../Images/logoblack.png";
 import "../Styles/header.css";
 
 const Header = () => {
@@ -70,7 +72,7 @@ const Header = () => {
               <g id="SVGRepo_iconCarrier">
                 <path
                   d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
-                  stroke="#a12b35"
+                  stroke="#ede4d4"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -83,7 +85,7 @@ const Header = () => {
           </div>
           <div className="phone-box">
             <div className="icon-box">
-              <img className="header-phone" src={smartphone} alt="Phone" />
+              <img className="header-phone" src={smartphone2} alt="Phone" />
             </div>
             <div className="heading">
               <h4>Phone</h4>
@@ -92,7 +94,7 @@ const Header = () => {
           </div>
           <div className="phone-box">
             <div className="icon-box">
-              <img className="header-location" src={Location} alt="Location" />
+              <img className="header-location" src={location2} alt="Location" />
             </div>
             <div className="heading">
               <h4>Showroom</h4>
