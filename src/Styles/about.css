@@ -140,6 +140,11 @@
     margin-top: 50px;
   }
 }
+@media (min-width: 1750px) {
+  .about-container {
+    margin-left: 380px;
+  }
+}
 @media (min-width: 600px) and (max-width: 1024px) {
   .about-container {
     flex-direction: column;

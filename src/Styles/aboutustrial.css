@@ -1,0 +1,190 @@
+.aboutus-container {
+  background-color: #282929;
+  color: #f6f0e6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.aboutus-sec-01,
+.aboutus-sec-02,
+.aboutus-sec-03 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 100px;
+}
+
+.aboutus-inner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutus-main-title {
+  font-size: 4em;
+  margin-bottom: 50px;
+  color: #ede4d4; /* Cream color accent */
+}
+
+.aboutus-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1150px;
+}
+
+.aboutus-image {
+  width: 800px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.aboutus-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.aboutus-text-box {
+  background-color: rgba(246, 240, 230, 0.1); /* Transparent light accent */
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  max-width: 400px;
+  border: 1px solid rgba(246, 240, 230, 0.1); /* Light border */
+  border-radius: 10px;
+  color: #f6f0e6;
+  transform: translate(-80px, 50px);
+}
+
+.aboutus-text-box h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #ede4d4; /* Cream color accent */
+}
+
+.aboutus-media-icons {
+  margin-top: 100px;
+}
+
+.aboutus-media-icons a {
+  color: #f6f0e6;
+  font-size: 2em;
+  margin: 60px;
+}
+
+.aboutus-section-title {
+  font-size: 3em;
+  margin-bottom: 80px;
+  color: #ede4d4; /* Cream color accent */
+}
+
+.aboutus-info-title {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #ede4d4; /* Cream color accent */
+}
+
+.aboutus-info {
+  width: 700px;
+  margin-left: 50px;
+}
+
+.aboutus-media-info {
+  width: 400px;
+  margin-left: 50px;
+}
+
+.aboutus-media-info li {
+  list-style: none;
+  font-size: 1.4em;
+}
+
+.aboutus-media-info li a {
+  color: #f6f0e6;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media only screen and (max-width: 600px) {
+  .aboutus-sec-01,
+  .aboutus-sec-02,
+  .aboutus-sec-03 {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .aboutus-main-title {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .aboutus-content {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .aboutus-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .aboutus-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+  .aboutus-text-box {
+    max-width: 100%;
+    padding: 20px;
+    transform: translate(0, 0);
+    text-align: center;
+  }
+
+  .aboutus-text-box h3 {
+    font-size: 1.6em;
+  }
+
+  .aboutus-media-icons {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .aboutus-media-icons a {
+    font-size: 1.5em;
+    margin: 20px;
+  }
+
+  .aboutus-section-title {
+    font-size: 2.2em;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .aboutus-info-title {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .aboutus-info,
+  .aboutus-media-info {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .aboutus-media-info li {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    padding-left: 0;
+  }
+}

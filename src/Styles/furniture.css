@@ -234,6 +234,14 @@
     width: 90px;
   }
 }
+@media (min-width: 1750px) {
+  .image-priceand1 {
+    width: 350px;
+  }
+  .item-grid-11 {
+    margin-bottom: 20px;
+  }
+}
 @media (min-width: 601px) and (max-width: 1024px) {
   .item-grid-container1 {
     grid-template-columns: repeat(

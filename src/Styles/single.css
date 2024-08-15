@@ -334,10 +334,10 @@
   width: 20px;
   height: 20px;
 }
-@media (min-width: 1450px) and (max-width: 1900px) {
+@media (min-width: 1750px) {
   .fourth {
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
     margin-left: 200px;
   }
   .buyit-fourth {
@@ -355,6 +355,9 @@
   .accordion {
     margin-left: 150px;
   }
+  .single-container-123 {
+    left: 20%;
+  }
 }
 .customise-fourth {
   margin-bottom: 50px !important;
@@ -367,6 +370,7 @@
 }
 .single-container-123 {
   overflow: hidden;
+  left: 20%;
 }
 
 @media (max-width: 450px) {

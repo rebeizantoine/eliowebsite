@@ -26,6 +26,7 @@ import ThankyouPage from "./Components/ThankyouPage";
 import AdminLogin from "./Components/Adminlogin";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import NotFound from "./Components/Notfound";
+import AboutUsTrial from "./Components/AboutTrial";
 
 function App() {
   return (
@@ -224,6 +225,16 @@ function App() {
                 <>
                   <Header />
                   <NotFound />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/abouttrial"
+              element={
+                <>
+                  <Header />
+                  <AboutUsTrial />
                   <Footer />
                 </>
               }
