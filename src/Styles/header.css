@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 .header-logo {
-  width: 165px;
-  height: 40px;
+  width: auto;
+  height: 400px;
 }
 .header-logo:hover {
   cursor: pointer;

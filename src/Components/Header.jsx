@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../Images/LOGO.png";
+import Logo2 from "../Images/Artboard 3.png";
 import smartphone from "../Images/smartphone.png";
 import Location from "../Images/location.png";
 import { CartContext } from "../Components/CartContext";
@@ -46,7 +47,7 @@ const Header = () => {
       <div className="header-top">
         <div className="logo-container">
           <img
-            src={Logo}
+            src={Logo2}
             className="header-logo"
             alt="Logo"
             onClick={() => handleNavigation("/")}
