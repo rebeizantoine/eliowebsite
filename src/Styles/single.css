@@ -334,6 +334,33 @@
   width: 20px;
   height: 20px;
 }
+@media (max-width: 1550px) {
+  .single-container-123 {
+    left: 10% !important;
+    max-width: 1400px;
+  }
+  .buyit-fourth {
+    position: relative;
+    left: 18.5%;
+  }
+  .customise-fourth {
+    position: relative;
+    left: 2% !important;
+  }
+  .fourth a {
+    width: 325px;
+  }
+  .whatsapp-fourth {
+    position: relative;
+    left: 5.5%;
+  }
+  .quantity {
+    left: -190px;
+  }
+  .second-p-here {
+    left: -170px;
+  }
+}
 @media (min-width: 1750px) {
   .fourth {
     display: flex;
