@@ -30,6 +30,7 @@ import AboutUsTrial from "./Components/AboutTrial";
 
 function App() {
   return (
+    
     <CartProvider>
       <div className="App">
         <Router>
