@@ -313,6 +313,7 @@
 }
 .flex-option {
   display: flex;
+  margin-left: 20px;
 }
 .flex-option h3 {
   min-height: 1.6rem;
@@ -413,7 +414,23 @@
   }
   .fourth {
     margin-left: 200px;
+    display: flex;
+    flex-direction: column;
   }
+  .customise-fourth {
+    position: relative;
+    left: -80px !important;
+    padding-right: 20px !important;
+    justify-content: center !important;
+  }
+  .buyit-fourth {
+    position: relative;
+    left: -120px;
+    padding-right: 40px !important;
+    width: 310px !important;
+    top: 25px !important;
+  }
+
   .fourth button {
     margin-left: -40px;
   }
@@ -448,10 +465,10 @@
     margin-left: -10px;
   }
   .seventh p {
-    width: 65%;
+    width: 58%;
     margin-left: 40px;
     margin-bottom: 50px;
-    margin-top: 400px;
+    margin-top: 450px;
   }
   .additional-div .slick-prev {
     display: none !important;
@@ -466,6 +483,15 @@
     width: 300px;
     margin-left: 100px !important;
     right: -52% !important;
+  }
+  .right-everything {
+    margin-left: -40px;
+  }
+  .additional-div1 {
+    position: relative;
+    top: 1% !important;
+    left: 0px;
+    margin-bottom: 20px !important;
   }
 }
 .customize-modal {
