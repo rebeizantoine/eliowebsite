@@ -53,7 +53,7 @@ const ExhibitionAddForm = ({ onCancel, onSuccess = () => {} }) => {
     try {
       const formDataObject = new FormData(formRef.current);
       const response = await axios.post(
-        "https://eliowebsite.onrender.com/exhibitions/exhibition/add",
+        "https://allinone-14n7.onrender.com/exhibitions/exhibition/add",
         formDataObject
       );
       onSuccess(response.data);

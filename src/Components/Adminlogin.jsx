@@ -12,7 +12,7 @@ const AdminLogin = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://eliowebsite.onrender.com/adminsjdd/adminsjdd/login",
+        "https://allinone-14n7.onrender.com/adminsjdd/adminsjdd/login",
         {
           adminname,
           adminpassword,

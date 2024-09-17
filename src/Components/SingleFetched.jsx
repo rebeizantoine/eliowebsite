@@ -30,7 +30,7 @@ const SingleFetched = () => {
     const itemId = localStorage.getItem("currentItemId");
     if (itemId) {
       axios
-        .get(`https://eliowebsite.onrender.com/singleitem/${itemId}`)
+        .get(`https://allinone-14n7.onrender.com/singleitem/${itemId}`)
         .then((response) => {
           setItem(response.data);
         })

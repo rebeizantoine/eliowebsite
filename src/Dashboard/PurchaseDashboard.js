@@ -16,7 +16,7 @@ const PurchasedDashboard = () => {
   const fetchPurchasedItems = async () => {
     try {
       const response = await axios.get(
-        "https://eliowebsite.onrender.com/purchased/"
+        "https://allinone-14n7.onrender.com/purchased/"
       );
       setPurchasedItems(response.data);
     } catch (error) {
@@ -37,7 +37,7 @@ const PurchasedDashboard = () => {
   const handleSaveClick = async () => {
     try {
       await axios.put(
-        `https://eliowebsite.onrender.com/purchased/${currentItem._id}`,
+        `https://allinone-14n7.onrender.com/purchased/${currentItem._id}`,
         currentItem
       );
       setPurchasedItems((prevItems) =>

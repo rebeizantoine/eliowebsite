@@ -53,7 +53,7 @@ const PurchasePage = () => {
 
     try {
       await axios.post(
-        "https://eliowebsite.onrender.com/purchased/add",
+        "https://allinone-14n7.onrender.com/purchased/add",
         payload
       );
       toast.success("Order submitted successfully!");
