@@ -399,6 +399,7 @@
 .single-container-123 {
   overflow: hidden;
   left: 20%;
+  max-width: 1300px;
 }
 
 @media (max-width: 450px) {

@@ -5,6 +5,9 @@
   height: 400px;
   z-index: 2;
 }
+.cart-icon-number {
+  color: white;
+}
 .header-logo:hover {
   cursor: pointer;
 }

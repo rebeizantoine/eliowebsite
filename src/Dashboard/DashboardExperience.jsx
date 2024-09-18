@@ -15,7 +15,7 @@ const DashboardExperience = () => {
 
   useEffect(() => {
     axios
-      .get("https://bridges-backend-ob24.onrender.com/exhibitions")
+      .get("https://allinone-14n7.onrender.com/exhibitions")
       .then((response) => {
         setExhibitions(response.data);
       })
@@ -26,9 +26,7 @@ const DashboardExperience = () => {
 
   const handleDelete = (exhibitionId) => {
     axios
-      .delete(
-        `https://bridges-backend-ob24.onrender.com/exhibitions/${exhibitionId}`
-      )
+      .delete(`https://allinone-14n7.onrender.com/exhibitions/${exhibitionId}`)
       .then(() => {
         setExhibitions((prevExhibitions) =>
           prevExhibitions.filter(
@@ -62,7 +60,7 @@ const DashboardExperience = () => {
   const handleEditSave = () => {
     axios
       .put(
-        `https://bridges-backend-ob24.onrender.com/exhibitions/${currentExhibition._id}`,
+        `https://allinone-14n7.onrender.com/exhibitions/${currentExhibition._id}`,
         currentExhibition
       )
       .then(() => {

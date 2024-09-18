@@ -18,7 +18,7 @@ const ArtistDashboard = () => {
 
   const fetchItems = () => {
     axios
-      .get("http://localhost:8000/singleitem/")
+      .get("https://allinone-14n7.onrender.com/singleitem/")
       .then((response) => {
         setItems(response.data);
       })
@@ -29,7 +29,7 @@ const ArtistDashboard = () => {
 
   const handleDelete = (itemId) => {
     axios
-      .delete(`http://localhost:8000/singleitem/${itemId}`)
+      .delete(`https://allinone-14n7.onrender.com/singleitem/${itemId}`)
       .then(() => {
         setItems((prevItems) =>
           prevItems.filter((item) => item._id !== itemId)
@@ -56,7 +56,10 @@ const ArtistDashboard = () => {
 
   const handleEditSave = () => {
     axios
-      .put(`http://localhost:8000/singleitem/${currentItem._id}`, currentItem)
+      .put(
+        `https://allinone-14n7.onrender.com/singleitem/${currentItem._id}`,
+        currentItem
+      )
       .then(() => {
         setItems((prevItems) =>
           prevItems.map((item) =>
@@ -85,7 +88,7 @@ const ArtistDashboard = () => {
     }
 
     axios
-      .put(`http://localhost:8000/singleitem/${itemId}`, {
+      .put(`https://allinone-14n7.onrender.com/singleitem/${itemId}`, {
         item_maylike: value,
       })
       .then(() => {

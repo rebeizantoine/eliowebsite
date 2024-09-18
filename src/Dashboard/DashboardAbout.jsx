@@ -11,7 +11,7 @@ function DashboardAbout() {
   useEffect(() => {
     // Fetch all about details when the component mounts
     axios
-      .get("https://bridges-backend-ob24.onrender.com/about/")
+      .get("https://allinone-14n7.onrender.com/about/")
       .then((response) => {
         setAboutData(response.data);
       })
@@ -44,7 +44,7 @@ function DashboardAbout() {
     }
 
     axios
-      .put(`https://bridges-backend-ob24.onrender.com/about/${id}`, formData)
+      .put(`https://allinone-14n7.onrender.com/about/${id}`, formData)
       .then((response) => {
         const newData = aboutData.map((item) =>
           item._id === id ? { ...response.data, editable: false } : item

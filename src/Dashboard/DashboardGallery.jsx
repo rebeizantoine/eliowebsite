@@ -11,7 +11,7 @@ const DashboardGalleries = () => {
 
   useEffect(() => {
     axios
-      .get("https://bridges-backend-ob24.onrender.com/gallery/")
+      .get("https://allinone-14n7.onrender.com/gallery/")
       .then((response) => {
         setGalleries(response.data);
       })
@@ -22,7 +22,7 @@ const DashboardGalleries = () => {
 
   const handleDelete = (galleryId) => {
     axios
-      .delete(`https://bridges-backend-ob24.onrender.com/gallery/${galleryId}`)
+      .delete(`https://allinone-14n7.onrender.com/gallery/${galleryId}`)
       .then(() => {
         setGalleries((prevGalleries) =>
           prevGalleries.filter((gallery) => gallery._id !== galleryId)
@@ -50,7 +50,7 @@ const DashboardGalleries = () => {
   const handleEditSave = () => {
     axios
       .put(
-        `https://bridges-backend-ob24.onrender.com/gallery/${currentGallery._id}`,
+        `https://allinone-14n7.onrender.com/gallery/${currentGallery._id}`,
         currentGallery
       )
       .then(() => {
