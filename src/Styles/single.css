@@ -342,7 +342,9 @@
   }
   .buyit-fourth {
     position: relative;
-    left: 18.5%;
+    left: 5.5% !important;
+    top: 30px !important;
+    width: 390px !important;
   }
   .customise-fourth {
     position: relative;
@@ -356,10 +358,24 @@
     left: 5.5%;
   }
   .quantity {
-    left: -190px;
+    left: -140px;
   }
   .second-p-here {
-    left: -170px;
+    left: -105px;
+  }
+  .fourth {
+    margin-left: 160px;
+  }
+  .customise-fourth {
+    width: 325px !important;
+    position: relative;
+    left: 3px !important;
+  }
+  .accordion {
+    margin-left: 170px;
+  }
+  .seventh p {
+    margin-left: 50px;
   }
 }
 @media (min-width: 1750px) {
