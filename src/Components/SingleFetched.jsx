@@ -147,7 +147,7 @@ const SingleFetched = () => {
         </div>
         <div className="right-everything">
           <div className="first">
-            <h4>DESIGNED & PRODUCED BY OUTBOX SARL</h4>
+            <h4>DESIGNED & PRODUCED BY JDDESIGNS SARL</h4>
             <h1>{item.item_name}</h1>
           </div>
           <div className="second">
@@ -220,13 +220,23 @@ const SingleFetched = () => {
                       />
                       <h3>{accordionItem.title}</h3>
                     </div>
-                    <span>{activeIndex === index ? "-" : "+"}</span>
+
+                    <span
+                      className={`accordion-icon ${
+                        activeIndex === index ? "open" : ""
+                      }`}
+                    >
+                      +
+                    </span>
                   </div>
-                  {activeIndex === index && (
-                    <div className="accordion-content">
-                      <p>{accordionItem.content}</p>
-                    </div>
-                  )}
+
+                  <div
+                    className={`accordion-content ${
+                      activeIndex === index ? "open" : ""
+                    }`}
+                  >
+                    <p>{accordionItem.content}</p>
+                  </div>
                 </div>
               ))}
             </div>

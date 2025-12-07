@@ -18,6 +18,7 @@ const Header = () => {
   const [showCartPopup, setShowCartPopup] = useState(false);
   const [contact, setContact] = useState({}); // Assuming you expect a single contact object
   const [showSidebar, setShowSidebar] = useState(false); // State for sidebar visibility
+  const [animateBadge, setAnimateBadge] = useState(false);
 
   const handleNavigation = (path) => {
     navigate(path);
@@ -41,7 +42,12 @@ const Header = () => {
         console.error("Error fetching contact:", error);
       });
   }, []);
-
+  useEffect(() => {
+    if (cartItems.length === 0) return;
+    setAnimateBadge(true);
+    const timer = setTimeout(() => setAnimateBadge(false), 300);
+    return () => clearTimeout(timer);
+  }, [cartItems.length]);
   return (
     <div>
       <div className="header-top">
@@ -81,7 +87,13 @@ const Header = () => {
               </g>
             </svg>
             {cartItems.length > 0 && (
-              <div className="cart-icon-number">{cartItems.length}</div>
+              <div
+                className={`cart-icon-number ${
+                  animateBadge ? "badge-animate" : ""
+                }`}
+              >
+                {cartItems.length}
+              </div>
             )}
           </div>
           <div className="phone-box">
@@ -256,7 +268,12 @@ const Header = () => {
             >
               Empty Cart
             </button>
-            <button onClick={() => handleNavigation("/checkout")}>
+            <button
+              onClick={() => {
+                handleNavigation("/checkout");
+                setShowCartPopup(false); // Close the popup
+              }}
+            >
               Proceed to Checkout
             </button>
           </div>

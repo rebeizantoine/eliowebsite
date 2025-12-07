@@ -5,6 +5,27 @@
   height: 400px;
   z-index: 2;
 }
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.4);
+  }
+  50% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cart-icon-number.badge-animate {
+  animation: bounce 0.6s ease;
+}
 .cart-icon-number {
   color: white;
 }
