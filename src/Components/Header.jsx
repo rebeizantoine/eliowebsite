@@ -251,7 +251,9 @@ const Header = () => {
                   <div className="cart-item-details">
                     <p>{item.item_name}</p>
                     <p>Color: {item.item_color1}</p>
-                    <p>${item.item_price}</p>
+                    <p>
+                      ${item.item_price} × {item.quantity || 1}
+                    </p>{" "}
                   </div>
                 </div>
               ))

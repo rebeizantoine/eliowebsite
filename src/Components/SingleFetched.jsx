@@ -13,6 +13,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CartContext } from "../Components/CartContext";
 import Modal from "../Components/Modal"; // Import the modal component
+import { ToastContainer, toast } from "react-toastify";
 
 const SingleFetched = () => {
   const { name } = useParams();
@@ -75,6 +76,7 @@ const SingleFetched = () => {
 
   const handleBuyNow = () => {
     addToCart(item);
+    toast.success("Added to cart");
   };
 
   useEffect(() => {
@@ -284,6 +286,7 @@ const SingleFetched = () => {
           </a>
         </Modal>
       </div>
+      <ToastContainer />
     </div>
   );
 };

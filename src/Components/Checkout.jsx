@@ -24,7 +24,7 @@ const Checkout = () => {
       ) : (
         <div>
           {cartItems.map((item) => (
-            <div key={item.id} className="checkout-item">
+            <div key={item._id} className="checkout-item">
               <img
                 src={item.item_image1}
                 alt={item.item_name}
@@ -42,7 +42,10 @@ const Checkout = () => {
           <div className="checkout-total">
             <h3>
               Total: $
-              {cartItems.reduce((acc, item) => acc + item.item_price, 0)}
+              {cartItems.reduce(
+                (acc, item) => acc + item.item_price * (item.quantity || 1),
+                0,
+              )}
             </h3>
             <button className="checkout-button" onClick={goToPayment}>
               Proceed to Payment
