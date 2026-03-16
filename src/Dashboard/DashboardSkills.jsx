@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./contactdash.css";
+import "./Styles/contactdash.css";
 import axios from "axios";
 
 function DashboardCV() {
@@ -13,7 +13,7 @@ function DashboardCV() {
     async function fetchContacts() {
       try {
         const response = await axios.get(
-          "https://allinone-14n7.onrender.com/contactsjdd"
+          "https://allinone-14n7.onrender.com/contactsjdd",
         );
         setContacts(response.data);
       } catch (error) {
@@ -26,10 +26,10 @@ function DashboardCV() {
   const handleDeleteContact = async (contactId) => {
     try {
       await axios.delete(
-        `https://allinone-14n7.onrender.com/contactsjdd/${contactId}`
+        `https://allinone-14n7.onrender.com/contactsjdd/${contactId}`,
       );
       setContacts((prevContacts) =>
-        prevContacts.filter((contact) => contact._id !== contactId)
+        prevContacts.filter((contact) => contact._id !== contactId),
       );
       toast.success("Contact deleted successfully");
     } catch (error) {
@@ -56,14 +56,14 @@ function DashboardCV() {
       const { _id, ...updatedContact } = currentContact;
       const response = await axios.put(
         `https://allinone-14n7.onrender.com/contactsjdd/${_id}`,
-        updatedContact
+        updatedContact,
       );
       setContacts((prevContacts) =>
         prevContacts.map((contact) =>
           contact._id === currentContact._id
             ? { ...contact, ...updatedContact }
-            : contact
-        )
+            : contact,
+        ),
       );
       toast.success("Contact updated successfully");
       setIsEditing(false);
@@ -121,7 +121,7 @@ function DashboardCV() {
                     } else {
                       return null;
                     }
-                  })
+                  }),
                 )
               ) : (
                 <tr>

@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from "axios";
-import "./dashboardhome2.css"; // Import your CSS file here
+import "./Styles/dashboardhome2.css"; // Import your CSS file here
 
 const FeaturedItems = () => {
   const [items, setItems] = useState([]);
@@ -16,7 +16,7 @@ const FeaturedItems = () => {
     const fetchItems = async () => {
       try {
         const response = await axios.get(
-          "https://allinone-14n7.onrender.com/singleitem/"
+          "https://allinone-14n7.onrender.com/singleitem/",
         );
 
         setItems(response.data.slice(0, 8));
@@ -37,7 +37,7 @@ const FeaturedItems = () => {
     try {
       await axios.put(
         `https://allinone-14n7.onrender.com/singleitem/${items[index]._id}`,
-        items[index]
+        items[index],
       );
       setEditIndex(null);
       toast.success("Item details saved successfully!");

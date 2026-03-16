@@ -1,243 +1,229 @@
-import React from "react";
-import "./App.css";
-import Header from "./Components/Header";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Hero1 from "./Components/Hero1";
-import Section1 from "./Components/Section1";
-import About from "./Components/About";
-import Footer from "./Components/Footer";
+import { CartProvider } from "./Components/CartContext";
+
+// Layouts (Header + Footer handled inside Layout)
+import Layout from "./Components/Layout/Layout";
+
+// Light/frequently-used components (normal import)
 import Furniture from "./Components/Furniture";
 import Whychoose from "./Components/Whychoose";
 import Designers from "./Components/Designers";
 import Single from "./Components/Single";
 import Alsolike from "./Components/Alsolike";
-import Categories from "./Components/Categories";
-import Collections from "./Components/Collections";
 import AboutUs from "./Components/Whatwedo";
-import CollectionSingle from "./Components/CollectionSingle";
 import Testingtally from "./Components/testingtally";
-import Dashboard from "./Dashboard/Dashboard";
-import SingleFetched from "./Components/SingleFetched";
 import Contactus from "./Components/Contactus";
-import { CartProvider } from "./Components/CartContext";
-import Checkout from "./Components/Checkout";
-import PurchasePage from "./Components/PurchasePage";
-import ThankyouPage from "./Components/ThankyouPage";
+import NotFound from "./Components/Notfound";
 import AdminLogin from "./Components/Adminlogin";
 import ProtectedRoute from "./Components/ProtectedRoute";
-import NotFound from "./Components/Notfound";
-import AboutUsTrial from "./Components/AboutTrial";
+import "./App.css";
 
+// Simple spinner fallback
+const Spinner = () => (
+  <div style={{ textAlign: "center", marginTop: "50px" }}>Loading...</div>
+);
+
+// Lazy-loaded heavy pages
+const HomeLayout = lazy(() => import("./Components/Layout/HomeLayout"));
+const SinglePage = lazy(() => import("./Components/pages/SinglePage"));
+const Dashboard = lazy(() => import("./Dashboard/Dashboard"));
+const CollectionSingle = lazy(() => import("./Components/CollectionSingle"));
+const Collections = lazy(() => import("./Components/Collections"));
+const Checkout = lazy(() => import("./Components/Checkout"));
+const PurchasePage = lazy(() => import("./Components/PurchasePage"));
+const ThankyouPage = lazy(() => import("./Components/ThankyouPage"));
 function App() {
   return (
-    
     <CartProvider>
       <div className="App">
         <Router>
           <Routes>
+            {/* Home page */}
             <Route
               path="/"
               element={
-                <>
-                  <Header />
-                  <Hero1 />
-                  <Section1 />
-                  <Collections />
-                  <About />
-                  <Whychoose />
-                  <Designers />
-                  <Footer />
-                </>
+                <Suspense fallback={<Spinner />}>
+                  <HomeLayout />
+                </Suspense>
               }
             />
+
+            {/* Artworks */}
             <Route
               path="/artworks"
               element={
-                <>
-                  <Header />
+                <Layout>
                   <Furniture />
-                  <Footer />
-                </>
+                </Layout>
               }
             />
+
+            {/* Checkout / Purchase */}
             <Route
               path="/checkout"
               element={
-                <>
-                  <Header />
-                  <Checkout />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/testing2"
-              element={
-                <>
-                  <Header />
-                  <Whychoose />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/collection/:collectionName"
-              element={
-                <>
-                  <Header />
-                  <CollectionSingle />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/collection"
-              element={
-                <>
-                  <Header />
-                  <Collections />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/single/:id"
-              element={
-                <>
-                  <Header />
-                  <SingleFetched />
-                  <Alsolike />
-                  <Designers />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/single"
-              element={
-                <>
-                  <Header />
-                  <Single />
-                  <Alsolike />
-                  <Designers />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/testing5"
-              element={
-                <>
-                  <Header />
-                  <Alsolike />
-                  <Whychoose />
-                  <Designers />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/testing6"
-              element={
-                <>
-                  <Header />
-                  <AboutUs />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/whatwedo"
-              element={
-                <>
-                  <Header />
-                  <AboutUs />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/nigger"
-              element={
-                <>
-                  <Header />
-                  <CollectionSingle />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/testing7"
-              element={
-                <>
-                  <Header />
-                  <Testingtally />
-                  <Footer />
-                </>
+                <Suspense fallback={<Spinner />}>
+                  <Layout>
+                    <Checkout />
+                  </Layout>
+                </Suspense>
               }
             />
             <Route
               path="/purchase"
               element={
-                <>
-                  <Header />
-                  <PurchasePage />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/contactus"
-              element={
-                <>
-                  <Header />
-                  <Contactus />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/admin"
-              element={
-                <>
-                  <Header />
-                  <AdminLogin />
-                  <Footer />
-                </>
+                <Suspense fallback={<Spinner />}>
+                  <Layout>
+                    <PurchasePage />
+                  </Layout>
+                </Suspense>
               }
             />
             <Route
               path="/thankyou"
               element={
-                <>
-                  <Header />
-                  <ThankyouPage />
-                  <Footer />
-                </>
+                <Suspense fallback={<Spinner />}>
+                  <Layout>
+                    <ThankyouPage />
+                  </Layout>
+                </Suspense>
+              }
+            />
+
+            {/* Collections */}
+            <Route
+              path="/collection"
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <Layout>
+                    <Collections />
+                  </Layout>
+                </Suspense>
               }
             />
             <Route
-              path="/dashboard"
-              element={<ProtectedRoute component={Dashboard} />}
+              path="/collection/:collectionName"
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <Layout>
+                    <CollectionSingle />
+                  </Layout>
+                </Suspense>
+              }
             />
+
+            {/* Single artworks */}
+            <Route
+              path="/single"
+              element={
+                <Layout>
+                  <Single />
+                  <Alsolike />
+                  <Designers />
+                </Layout>
+              }
+            />
+            <Route
+              path="/single/:id"
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <SinglePage />
+                </Suspense>
+              }
+            />
+
+            {/* About / What we do */}
+            <Route
+              path="/whatwedo"
+              element={
+                <Layout>
+                  <AboutUs />
+                </Layout>
+              }
+            />
+            {/* <Route
+              path="/abouttrial"
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <Layout>
+                    <AboutUsTrial />
+                  </Layout>
+                </Suspense>
+              }
+            /> */}
+
+            {/* Other sections */}
+            <Route
+              path="/testing2"
+              element={
+                <Layout>
+                  <Whychoose />
+                </Layout>
+              }
+            />
+            <Route
+              path="/testing5"
+              element={
+                <Layout>
+                  <Alsolike />
+                  <Whychoose />
+                  <Designers />
+                </Layout>
+              }
+            />
+            <Route
+              path="/testing6"
+              element={
+                <Layout>
+                  <AboutUs />
+                </Layout>
+              }
+            />
+            <Route
+              path="/testing7"
+              element={
+                <Layout>
+                  <Testingtally />
+                </Layout>
+              }
+            />
+
+            {/* Contact / Admin */}
+            <Route
+              path="/contactus"
+              element={
+                <Layout>
+                  <Contactus />
+                </Layout>
+              }
+            />
+            <Route
+              path="/admin"
+              element={
+                <Layout>
+                  <AdminLogin />
+                </Layout>
+              }
+            />
+
+            {/* Dashboard */}
+            <Route
+              path="/dashboard"
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <ProtectedRoute component={Dashboard} />
+                </Suspense>
+              }
+            />
+
+            {/* Catch-all 404 */}
             <Route
               path="*"
               element={
-                <>
-                  <Header />
+                <Layout>
                   <NotFound />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/abouttrial"
-              element={
-                <>
-                  <Header />
-                  <AboutUsTrial />
-                  <Footer />
-                </>
+                </Layout>
               }
             />
           </Routes>

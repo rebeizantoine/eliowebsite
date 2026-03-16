@@ -3,7 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Draggable from "react-draggable";
-import "./dashboardcv.css";
+import "./Styles/dashboardcv.css";
 import AddArtistForm from "../Components/AddArtistForm";
 
 const ArtistDashboard = () => {
@@ -32,7 +32,7 @@ const ArtistDashboard = () => {
       .delete(`https://allinone-14n7.onrender.com/singleitem/${itemId}`)
       .then(() => {
         setItems((prevItems) =>
-          prevItems.filter((item) => item._id !== itemId)
+          prevItems.filter((item) => item._id !== itemId),
         );
         toast.success("Item deleted successfully");
       })
@@ -58,13 +58,13 @@ const ArtistDashboard = () => {
     axios
       .put(
         `https://allinone-14n7.onrender.com/singleitem/${currentItem._id}`,
-        currentItem
+        currentItem,
       )
       .then(() => {
         setItems((prevItems) =>
           prevItems.map((item) =>
-            item._id === currentItem._id ? currentItem : item
-          )
+            item._id === currentItem._id ? currentItem : item,
+          ),
         );
         setIsEditing(false);
         setCurrentItem({});
@@ -94,8 +94,8 @@ const ArtistDashboard = () => {
       .then(() => {
         setItems((prevItems) =>
           prevItems.map((item) =>
-            item._id === itemId ? { ...item, item_maylike: value } : item
-          )
+            item._id === itemId ? { ...item, item_maylike: value } : item,
+          ),
         );
         toast.success("Item updated successfully");
       })

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./dashboardcv.css";
+import "./Styles/dashboardcv.css";
 
 const PurchasedDashboard = () => {
   const [purchasedItems, setPurchasedItems] = useState([]);
@@ -16,7 +16,7 @@ const PurchasedDashboard = () => {
   const fetchPurchasedItems = async () => {
     try {
       const response = await axios.get(
-        "https://allinone-14n7.onrender.com/purchased/"
+        "https://allinone-14n7.onrender.com/purchased/",
       );
       setPurchasedItems(response.data);
     } catch (error) {
@@ -38,12 +38,12 @@ const PurchasedDashboard = () => {
     try {
       await axios.put(
         `https://allinone-14n7.onrender.com/purchased/${currentItem._id}`,
-        currentItem
+        currentItem,
       );
       setPurchasedItems((prevItems) =>
         prevItems.map((item) =>
-          item._id === currentItem._id ? currentItem : item
-        )
+          item._id === currentItem._id ? currentItem : item,
+        ),
       );
       setIsEditing(false);
       setCurrentItem({});

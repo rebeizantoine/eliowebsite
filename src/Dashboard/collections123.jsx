@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./dashboardcv.css";
+import "./Styles/dashboardcv.css";
 
 const Collections123 = () => {
   const [collections, setCollections] = useState([]);
@@ -36,8 +36,8 @@ const Collections123 = () => {
       .then(() => {
         setCollections((prevCollections) =>
           prevCollections.filter(
-            (collection) => collection._id !== collectionId
-          )
+            (collection) => collection._id !== collectionId,
+          ),
         );
         toast.success("Collection deleted successfully");
       })
@@ -82,15 +82,15 @@ const Collections123 = () => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        }
+        },
       )
       .then(() => {
         setCollections((prevCollections) =>
           prevCollections.map((collection) =>
             collection._id === currentCollection._id
               ? currentCollection
-              : collection
-          )
+              : collection,
+          ),
         );
         setIsEditing(false);
         setCurrentCollection({});

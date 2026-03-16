@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./dashboardcv.css";
+import "./Styles/dashboardcv.css";
 
 const Categories123 = () => {
   const [categories, setCategories] = useState([]);
@@ -34,7 +34,7 @@ const Categories123 = () => {
       .delete(`http://localhost:8000/categoriesjdd/${categoryId}`)
       .then(() => {
         setCategories((prevCategories) =>
-          prevCategories.filter((category) => category._id !== categoryId)
+          prevCategories.filter((category) => category._id !== categoryId),
         );
         toast.success("Category deleted successfully");
       })
@@ -60,13 +60,13 @@ const Categories123 = () => {
     axios
       .put(
         `http://localhost:8000/categoriesjdd/${currentCategory._id}`,
-        currentCategory
+        currentCategory,
       )
       .then(() => {
         setCategories((prevCategories) =>
           prevCategories.map((category) =>
-            category._id === currentCategory._id ? currentCategory : category
-          )
+            category._id === currentCategory._id ? currentCategory : category,
+          ),
         );
         setIsEditing(false);
         setCurrentCategory({});
