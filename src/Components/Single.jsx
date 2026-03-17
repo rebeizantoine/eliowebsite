@@ -6,7 +6,6 @@ import ruler from "../Images/ruler-svgrepo-com.svg";
 import question from "../Images/question-circle-svgrepo-com.svg";
 import location from "../Images/location-pin-alt-1-svgrepo-com.svg";
 
-import image3 from "../Images/imagelittle3.jpg";
 
 import whatsapp from "../Images/whatsapp.svg";
 import ticksvg from "../Images/ticksvg.svg";

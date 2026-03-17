@@ -13,6 +13,9 @@
   flex-wrap: wrap;
   justify-content: space-between; /* To ensure items are evenly spaced */
 }
+.slick-dots li button {
+  margin: 0px !important;
+}
 
 .edit-featured-painting {
   flex: 1 1 calc(33.333% - 20px); /* Adjusting flex basis to account for margin */

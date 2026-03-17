@@ -1,16 +1,19 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { CartContext } from "../Components/CartContext";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import "../Styles/purchasepage.css";
+import { useDispatch } from "react-redux";
+import { emptyCart } from "../redux/cartSlice";
 
 const PurchasePage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  dispatch(emptyCart());
   const location = useLocation();
   const { cartItems = [] } = location.state || {};
-  const { emptyCart } = useContext(CartContext);
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -54,7 +57,7 @@ const PurchasePage = () => {
     try {
       await axios.post(
         "https://allinone-14n7.onrender.com/purchased/add",
-        payload
+        payload,
       );
       toast.success("Order submitted successfully!");
 
@@ -68,7 +71,7 @@ const PurchasePage = () => {
 
   const subtotal = cartItems.reduce(
     (acc, item) => acc + item.item_price * (item.quantity || 1),
-    0
+    0,
   );
 
   const handleDeliveryChange = (option) => {

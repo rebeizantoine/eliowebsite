@@ -82,14 +82,6 @@ const Categories123 = () => {
     setCurrentCategory({});
   };
 
-  const handleAddClick = () => {
-    setNewCategory({
-      category_name: "",
-      category_image: "",
-    });
-    setIsAdding(true);
-  };
-
   const handleAddChange = (e) => {
     const { name, value } = e.target;
     setNewCategory((prevCategory) => ({

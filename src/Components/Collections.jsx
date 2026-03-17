@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import "../Styles/collections.css";
 import axios from "axios";
 
-import image1 from "../Images/collection1.jpg";
-import image2 from "../Images/collection2.jpg";
-import image3 from "../Images/collection3.jpg";
-import image4 from "../Images/collection4.jpg";
-import image5 from "../Images/collection5.jpg";
-import image6 from "../Images/collection5.jpg";
+// import image1 from "../Images/collection1.jpg";
+// import image2 from "../Images/collection2.jpg";
+// import image3 from "../Images/collection3.jpg";
+// import image4 from "../Images/collection4.jpg";
+// import image5 from "../Images/collection5.jpg";
+// import image6 from "../Images/collection5.jpg";
 import Arrowleft from "../Images/arrowright.svg";
 
 const Collections = () => {

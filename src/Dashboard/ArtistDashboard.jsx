@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Draggable from "react-draggable";
 import "./Styles/dashboardcv.css";
 import AddArtistForm from "../Components/AddArtistForm";
 
