@@ -1,0 +1,136 @@
+.status-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  background: #f3f4f6;
+}
+
+.status-card {
+  background: #ffffff;
+  padding: 50px 40px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Title with icon */
+.status-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.success .status-title {
+  color: #2f9e44;
+}
+
+.cancel .status-title {
+  color: #e03131;
+}
+
+.status-text {
+  font-size: 1.2rem;
+  color: #495057;
+  margin-bottom: 15px;
+}
+
+.status-subtext {
+  font-size: 0.95rem;
+  color: #868e96;
+  margin-bottom: 25px;
+  word-break: break-all; /* ✅ prevents long Stripe ID overflow */
+}
+
+/* Button */
+.status-button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  background-color: #a12b35;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.status-button:hover {
+  background-color: #7d1f27;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .status-card {
+    padding: 35px 20px;
+  }
+
+  .status-title {
+    font-size: 1.8rem;
+  }
+
+  .status-text {
+    font-size: 1rem;
+  }
+}
+.receipt-box {
+  margin-top: 25px;
+  text-align: left;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.receipt-items {
+  margin-top: 15px;
+}
+
+.receipt-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.receipt-total {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.receipt-status {
+  margin-top: 10px;
+  color: green;
+}
+
+/* PRINT MODE */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .receipt,
+  .receipt * {
+    visibility: visible;
+  }
+
+  .receipt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .status-actions {
+    display: none;
+  }
+}

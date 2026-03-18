@@ -5,13 +5,13 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import "../Styles/purchasepage.css";
 import { useDispatch } from "react-redux";
-import { emptyCart } from "../redux/cartSlice";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 const PurchasePage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  dispatch(emptyCart());
   const location = useLocation();
   const { cartItems = [] } = location.state || {};
 
@@ -31,56 +31,90 @@ const PurchasePage = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const payload = {
-      purchased_firstname: formData.firstName,
-      purchased_lastname: formData.lastName,
-      purchased_email: formData.email,
-      purchased_phonenumber1: formData.phone1,
-      purchased_phonenumber2: formData.phone2,
-      purchased_deliveryoption: formData.deliveryOption,
-      purchased_location: formData.location,
-      purchased_additionaldetails: formData.additionalDetails,
-      purchased_subtotal: subtotal,
-      purchased_item1name: cartItems[0]?.item_name || "",
-      purchased_item1price: cartItems[0]?.item_price || 0,
-      purchased_item2name: cartItems[1]?.item_name || "",
-      purchased_item2price: cartItems[1]?.item_price || 0,
-      purchased_item3name: cartItems[2]?.item_name || "",
-      purchased_item3price: cartItems[2]?.item_price || 0,
-      purchased_item4name: cartItems[3]?.item_name || "",
-      purchased_item4price: cartItems[3]?.item_price || 0,
-    };
-
-    try {
-      await axios.post(
-        "https://allinone-14n7.onrender.com/purchased/add",
-        payload,
-      );
-      toast.success("Order submitted successfully!");
-
-      emptyCart();
-      navigate("/thankyou");
-    } catch (error) {
-      toast.error("Failed to submit order. Please try again.");
-      console.error("There was an error submitting the order!", error);
-    }
-  };
-
   const subtotal = cartItems.reduce(
     (acc, item) => acc + item.item_price * (item.quantity || 1),
     0,
   );
 
+  const total =
+    formData.deliveryOption === "delivery" ? subtotal + 4 : subtotal;
+
   const handleDeliveryChange = (option) => {
     setFormData({ ...formData, deliveryOption: option });
   };
 
-  const total =
-    formData.deliveryOption === "delivery" ? subtotal + 4 : subtotal;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
+    if (cartItems.length === 0) {
+      toast.error("Your cart is empty!");
+      return;
+    }
+
+    try {
+      // 1️⃣ Prepare order payload and create order in backend
+      const orderPayload = {
+        email: formData.email,
+        name: `${formData.firstName} ${formData.lastName}`,
+        items: cartItems.map((item) => ({
+          productId: item.id,
+          name: item.item_name,
+          price: item.item_price,
+          quantity: item.quantity || 1,
+        })),
+        amount: total,
+        status: "pending", // can later be updated by webhook
+      };
+
+      const orderRes = await axios.post(
+        "https://eliowebsite.onrender.com/purchased/add",
+        orderPayload,
+      );
+
+      const orderId = orderRes.data.data?._id;
+
+      console.log("EXTRACTED ORDER ID:", orderId);
+      if (!orderId) {
+        toast.error("Order creation failed (no orderId returned)");
+        return;
+      }
+      toast.success("Order saved! Redirecting to payment...");
+
+      // 2️⃣ Prepare Stripe Checkout payload
+      const stripePayload = {
+        customerEmail: formData.email,
+        items: cartItems.map((item) => ({
+          name: item.item_name,
+          price: item.item_price,
+          quantity: item.quantity || 1,
+        })),
+        orderId, // pass orderId to backend for success_url
+      };
+      console.log("STRIPE PAYLOAD:", stripePayload);
+
+      // 3️⃣ Create Stripe Checkout session
+      const sessionRes = await axios.post(
+        "https://eliowebsite.onrender.com/payment/create-checkout-session",
+        stripePayload,
+      );
+
+      const { url } = sessionRes.data;
+      if (url) {
+        window.location.href = url; // redirect to Stripe
+      } else {
+        toast.error("Failed to get payment URL.");
+      }
+    } catch (error) {
+      console.error("FULL ERROR:", error);
+
+      if (error.response) {
+        console.error("BACKEND ERROR:", error.response.data);
+        toast.error(error.response.data.error || "Server error");
+      } else {
+        toast.error("Network error");
+      }
+    }
+  };
   return (
     <div className="purchase-page">
       <ToastContainer />

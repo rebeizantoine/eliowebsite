@@ -17,6 +17,8 @@ import Contactus from "./Components/Contactus";
 import NotFound from "./Components/Notfound";
 import AdminLogin from "./Components/Adminlogin";
 import ProtectedRoute from "./Components/ProtectedRoute";
+import Success from "./Components/Success";
+import Cancel from "./Components/Cancel";
 import "./App.css";
 
 // Simple spinner fallback
@@ -226,6 +228,8 @@ function App() {
                 </Layout>
               }
             />
+            <Route path="/success" element={<Success />} />
+            <Route path="/cancel" element={<Cancel />} />
           </Routes>
         </Router>
       </div>
